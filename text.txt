@@ -9,8 +9,4 @@ fjaslkjfd kldsajflasjf
 
 jfdsafieon 
 
-<<<<<<< Updated upstream
-asfeawraew
-=======
-ereaf
->>>>>>> Stashed changes
+changes
