@@ -8,7 +8,7 @@ using std::endl;
 
 int main() {
 
-	cout << "hello" << endl;
+	cout << "hello world" << endl;
 	int x = 5;
 	return 0;
 }
