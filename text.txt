@@ -8,3 +8,8 @@ ffjals jfksajfl s
 
 hekllo
 
+<<<<<<< HEAD
+=======
+
+sdjf lsdjfjewoiowijf
+>>>>>>> 6adae4f6a5a9f728fb63f52f9bdae5d44e85c08b
