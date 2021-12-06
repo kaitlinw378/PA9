@@ -1,4 +1,4 @@
-#include <SFML/Graphics.hpp>
+//#include <SFML/Graphics.hpp>
 
 #include "Application.h"
 
@@ -13,10 +13,11 @@ int main() {
 	Application obj;
 	obj.runApplication();
 
-	cout << "test program" << endl;
+	/*cout << "test program" << endl;
 	cout << "hola" << endl;
 	cout << "test" << endl;
 	cout << "hello world" << endl;
-	int x = 5;
+	int x = 5;*/
+
 	return 0;
 }
