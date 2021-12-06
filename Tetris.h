@@ -1,8 +1,12 @@
 #pragma once
 
 #include <iostream>
-//#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 //#include <Mouse.hpp>
+
+using sf::Vector2i;
+using sf::Window;
+using sf::Mouse;
 
 using std::cout;
 using std::cin;

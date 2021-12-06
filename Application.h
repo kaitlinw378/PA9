@@ -15,7 +15,7 @@ private:
 	void displayMenu();
 	void displayStartUpScreen();
 	void displayClosingScreen();
-	//vector2i getMouseClick();
+	//Vector2i getMouseClick();
 
 	Tetris mGame1;
 };

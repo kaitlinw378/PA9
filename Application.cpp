@@ -18,6 +18,7 @@ void Application::runApplication()
 void Application::runMenu()
 {
     int option;
+    Vector2i location;
 
     do {
         displayMenu();
@@ -30,6 +31,7 @@ void Application::runMenu()
             this->mGame1.runTetris();
             break;
         case 2: //Run other games
+            system("pause");
             break;
         case 3: //Exit Application
             break;
@@ -62,6 +64,7 @@ void Application::displayStartUpScreen()
         system("cls");
     }
     system("cls");
+
 }
 
 void Application::displayClosingScreen()
@@ -76,9 +79,14 @@ void Application::displayClosingScreen()
     system("cls");
 }
 
-//vector2i Application::getMouseClick()
+//Vector2i Application::getMouseClick()
 //{
-//    while (!isButtonPressed(sf::Mouse));
+//    Window window;
+//    Mouse cursor;
 //
-//    return getPosition();
+//    while (!cursor.isButtonPressed(cursor.Left));
+//
+//    Vector2i localPosition = cursor.getPosition(window);
+//
+//    return localPosition;
 //}
