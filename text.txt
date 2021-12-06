@@ -1,14 +1,21 @@
-Hello test
+Go to PA9 -> Project -> Properties
 
+Change configuration to All Configurations
+go to C/C++ -> General
 
-new changes
+Under Additional INclude Directories at top paste the file directory to SFML\include folder
+Should be something like: C:\SFML-2.5.1\include
 
-ffjals jfksajfl s
+Then go to Linker -> General 
+Under Additional Library Directories paste file directory to SFML\lib folder
+SHould be something like: C:\SFML-2.5.1\lib
 
+Then change configuration to Release
+go to Linker -> input 
+under aditional dependencies in front of kernel32.lib paste:
+sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;
 
+after press apply and it should look like:
+sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)
 
-helreirhjfio j
-
-one
-
-hello
+Then apply all changes and SFML should be able to compile on local VS project
