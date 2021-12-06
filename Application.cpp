@@ -18,7 +18,6 @@ void Application::runApplication()
 void Application::runMenu()
 {
     int option;
-    Vector2i location;
 
     do {
         displayMenu();

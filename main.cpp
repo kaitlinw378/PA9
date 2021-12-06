@@ -1,6 +1,7 @@
 //#include <SFML/Graphics.hpp>
 
 #include "Application.h"
+#include "ProgressBar.h"
 
 #include <string>
 #include <iostream>
@@ -9,15 +10,13 @@ using std::cout;
 using std::endl;
 
 int main() {
+	
+	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
 
-	Application obj;
-	obj.runApplication();
+	/*Application obj;
+	obj.runApplication();*/
 
-	/*cout << "test program" << endl;
-	cout << "hola" << endl;
-	cout << "test" << endl;
-	cout << "hello world" << endl;
-	int x = 5;*/
+	//ProgressBar bar()
 
 	return 0;
 }
