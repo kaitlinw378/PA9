@@ -56,7 +56,7 @@ void Application::displayStartUpScreen()
 
     sf::Vector2f size(window.getSize().x / 2, window.getSize().y / 40);
 
-    sf::Vector2f size(window.getSize().x / 2, window.getSize().y / 40);
+   // sf::Vector2f size(window.getSize().x / 2, window.getSize().y / 40);
     sf::RectangleShape background(sf::Vector2f(1250.f, 1250.f));
     sf::RectangleShape shape(sf::Vector2f(500.f, 1000.f));
     background.setFillColor(sf::Color(50, 50, 50));
@@ -90,7 +90,8 @@ void Application::displayStartUpScreen()
     text.setStyle(sf::Text::Bold);
 
     //testing gamepiece
-    //GamePiece piece;
+    GamePiece piece;
+    
     //piece.createPiece();
 
     while (window.isOpen())
@@ -103,14 +104,17 @@ void Application::displayStartUpScreen()
                 window.close();
         }
 
-        //window.draw(background);
-        //window.draw(shape);
+        window.draw(background);
+        window.draw(shape);
         window.draw(bar);
        
         window.draw(text);
+
+        piece.drawPiece(window); //testing piece drawing
+
         window.display();
 
-        //piece.drawPiece(window); //testing piece drawing
+        
 
     }
     for (int i = 0; i < 100; ++i)
