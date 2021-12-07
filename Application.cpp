@@ -55,7 +55,7 @@ void Application::displayStartUpScreen()
    
 
  
-    sf::Vector2f size(window.getSize().x / 4, window.getSize().y / 20);
+    sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
     sf::RectangleShape background(sf::Vector2f(1250.f, 1250.f));
     sf::RectangleShape shape(sf::Vector2f(500.f, 1000.f));
     background.setFillColor(sf::Color(50, 50, 50));
@@ -108,6 +108,9 @@ void Application::displayStartUpScreen()
         window.draw(bar);
        
         window.draw(text);
+
+        piece.drawPiece(window); //testing piece drawing
+
         window.display();
 
         
