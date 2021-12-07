@@ -47,7 +47,7 @@ void Tetris::runMenu()
 
 void Tetris::displayMenu()
 {
-
+    // display menu window with menu options
 }
 
 void Tetris::displayStartUpScreen()
