@@ -33,6 +33,18 @@
     <ClCompile Include="ipiece.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="opiece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lpiece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jpiece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spiece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="text.txt" />
@@ -62,6 +74,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ipiece.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="opiece.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lpiece.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jpiece.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spiece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
