@@ -127,12 +127,12 @@ void Application::displayStartUpScreen()
     {
         cout << endl << endl << endl << endl << endl << endl << endl <<
             endl << endl << endl << endl << endl;
-        cout << "                                                Starting Application...\n";
-        //Insert Progress Bar here
-        cout << "                                                     Loading...";
-        cout << i << "%";
-        Sleep(50);
-        system("cls");
+        //cout << "                                                Starting Application...\n";
+        ////Insert Progress Bar here
+        //cout << "                                                     Loading...";
+        //cout << i << "%";
+        //Sleep(50);
+        //system("cls");
     }
     system("cls");
 
