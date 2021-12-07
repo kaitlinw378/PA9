@@ -51,10 +51,17 @@ void Application::displayMenu()
 
 void Application::displayStartUpScreen()
 {
-    sf::RenderWindow window(sf::VideoMode(750, 750), "Tetris");
+    sf::RenderWindow window(sf::VideoMode(1250, 1250), "Tetris");
+   
 
     sf::Vector2f size(window.getSize().x / 2, window.getSize().y / 40);
-
+    sf::RectangleShape background(sf::Vector2f(1250.f, 1250.f));
+    sf::RectangleShape shape(sf::Vector2f(500.f, 1000.f));
+    background.setFillColor(sf::Color(50, 50, 50));
+    shape.setPosition(250.f, 150.f);
+    shape.setFillColor(sf::Color::Black);
+    shape.setOutlineThickness(5.f);
+    shape.setOutlineColor(sf::Color::Cyan);
     Tab bar(sf::Vector2f(size), sf::Color::Magenta,
         sf::Vector2f(100, 100));
 
@@ -93,7 +100,10 @@ void Application::displayStartUpScreen()
                 window.close();
         }
 
+        window.draw(background);
+        window.draw(shape);
         window.draw(bar);
+       
         window.draw(text);
         window.display();
 
