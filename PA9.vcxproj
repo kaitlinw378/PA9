@@ -175,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Anton.ttf" />
+    <Font Include="Teko.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

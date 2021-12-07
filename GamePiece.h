@@ -1,9 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
+#include <vector>
 using sf::Vector2i;
-
+using std::vector;
 /*
 struct Ipiece {
 
@@ -21,13 +21,14 @@ private:
 
 };
 
-class GamePiece {
+class GamePiece{
 public:
-	//Ipiece createPiece();
-	void displayPiece();
-
+	vector<Vector2i> createPiece();
+	void displayPiece(sf::RenderWindow &window);
+	
 private:
 	
-	//Vector2i s1[4];
+
+	vector<Vector2i> s1;
 	//Ipiece i;
 };
