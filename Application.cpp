@@ -64,6 +64,10 @@ void Application::displayStartUpScreen()
     shape.setOutlineThickness(5.f);
     shape.setOutlineColor(sf::Color::Cyan);
 
+    sf::RectangleShape shape2(sf::Vector2f(400.f, 675.f));
+    shape2.setPosition(775.f, 500.f);
+    shape2.setFillColor(sf::Color::Black);
+
     sf::Vertex line1[] =
     {
         sf::Vertex(sf::Vector2f(250.f, 175.f)),
@@ -240,7 +244,7 @@ void Application::displayStartUpScreen()
     text.setStyle(sf::Text::Bold);
 
     //testing gamepiece
-    GamePiece piece;
+    //GamePiece piece;
     
     //piece.createPiece();
 
@@ -256,7 +260,7 @@ void Application::displayStartUpScreen()
 
         window.draw(background);
         window.draw(shape);
-
+        window.draw(shape2);
 
         window.draw(line1, 2, sf::Lines);
         window.draw(line2, 2, sf::Lines);
@@ -293,11 +297,11 @@ void Application::displayStartUpScreen()
        
         window.draw(text);
 
-<<<<<<< HEAD
-        piece.drawPiece(window); //testing piece drawing
-=======
-        piece.drawPiece(window);
->>>>>>> b7ea6a28f051efc43fb82161ce811c0a3fb0eac1
+
+        //piece.drawPiece(window); //testing piece drawing
+
+        //piece.drawPiece(window);
+
 
         window.display();
 
