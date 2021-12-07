@@ -51,7 +51,7 @@ void Application::displayMenu()
 
 void Application::displayStartUpScreen()
 {
-    sf::RenderWindow window(sf::VideoMode(1250, 1250), "Retro Run");
+    sf::RenderWindow window(sf::VideoMode(1000, 1000), "Retro Run");
    
 
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
