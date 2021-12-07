@@ -293,11 +293,10 @@ void Application::displayStartUpScreen()
        
         window.draw(text);
 
-<<<<<<< HEAD
+
         piece.drawPiece(window); //testing piece drawing
-=======
-        piece.drawPiece(window);
->>>>>>> b7ea6a28f051efc43fb82161ce811c0a3fb0eac1
+
+
 
         window.display();
 
