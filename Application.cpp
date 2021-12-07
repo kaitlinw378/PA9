@@ -56,7 +56,7 @@ void Application::displayStartUpScreen()
 
  
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
-    sf::RectangleShape background(sf::Vector2f(1250.f, 1250.f));
+    sf::RectangleShape background(sf::Vector2f(625.f, 625.f));
     sf::RectangleShape shape(sf::Vector2f(500.f, 1000.f));
     background.setFillColor(sf::Color(50, 50, 50));
     shape.setPosition(200.f, 175.f);
