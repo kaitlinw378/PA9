@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="GamePiece.cpp" />
+    <ClCompile Include="ipiece.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ProgressBar.cpp" />
     <ClCompile Include="Tetris.cpp" />
@@ -168,6 +169,7 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="GamePiece.h" />
+    <ClInclude Include="ipiece.h" />
     <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Tab.h" />
@@ -175,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Anton.ttf" />
+    <Font Include="Teko.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

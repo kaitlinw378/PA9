@@ -1,33 +1,17 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <ctime>
 
-using sf::Vector2i;
+#include "ipiece.h"
 
-/*
-struct Ipiece {
-
-	Vector2i s1[4];
-
-};
-*/
-
-class Ipiece {
+class GamePiece{
 public:
-
-
+	//vector<Vector2i> getPieceType();
+	void drawPiece(sf::RenderWindow& window);
 private:
-	Ipiece();
+	vector<Vector2i> currentPieceType;
+	vector<Vector2i> nextPieceType;
 
-};
-
-class GamePiece {
-public:
-	//Ipiece createPiece();
-	void displayPiece();
-
-private:
-	
-	//Vector2i s1[4];
-	//Ipiece i;
+	Ipiece ipiece;
 };

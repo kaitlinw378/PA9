@@ -89,6 +89,10 @@ void Application::displayStartUpScreen()
 
     text.setStyle(sf::Text::Bold);
 
+    //testing gamepiece
+    //GamePiece piece;
+    //piece.createPiece();
+
     while (window.isOpen())
     {
 
@@ -99,12 +103,14 @@ void Application::displayStartUpScreen()
                 window.close();
         }
 
-        window.draw(background);
-        window.draw(shape);
+        //window.draw(background);
+        //window.draw(shape);
         window.draw(bar);
        
         window.draw(text);
         window.display();
+
+        //piece.drawPiece(window); //testing piece drawing
 
     }
     for (int i = 0; i < 100; ++i)
