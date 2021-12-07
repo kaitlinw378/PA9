@@ -5,14 +5,16 @@
 class Rectangle : public sf::RectangleShape
 {
 public:
-	//Ball(const double& newRadius, const sf::Color& newColor,
-		//const sf::Vector2f& newPosition) :
-		//sf::CircleShape(newRadius)
-
-	//this->setFillColor(newColor);
-	//this->setPosition(newPosition);
-
+	Rectangle (const sf::Vector2f& newSize,
+		const sf::Color& newColor,
+		const sf::Vector2f& newPosition, sf::Color& newOutlineColor, float& newOutlineThickness) :
+		sf::RectangleShape(newSize)
+	{
+		this->setPosition(newPosition);
+		this->setFillColor(newColor);
+		this->setOutlineColor(newOutlineColor);
+		this->setOutlineThickness(newOutlineThickness);
+	}
 
 private:
-	// double mRadius;
 };
