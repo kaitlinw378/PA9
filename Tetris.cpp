@@ -69,168 +69,168 @@ void Tetris::play()
 
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
     sf::RectangleShape background(sf::Vector2f(625.f, 625.f));
-    sf::RectangleShape shape(sf::Vector2f(500.f, 600.f));
+    sf::RectangleShape shape(sf::Vector2f(250.f, 500.f));
     background.setFillColor(sf::Color(50, 50, 50));
-    shape.setPosition(200.f, 175.f);
+    shape.setPosition(100.f, 87.5f);
     shape.setFillColor(sf::Color::Black);
-    shape.setOutlineThickness(5.f);
+    shape.setOutlineThickness(2.5f);
     shape.setOutlineColor(sf::Color::Cyan);
 
-    sf::RectangleShape shape2(sf::Vector2f(400.f, 675.f));
-    shape2.setPosition(775.f, 500.f);
+    sf::RectangleShape shape2(sf::Vector2f(200.f, 337.5f));
+    shape2.setPosition(387.5f, 250.f);
     shape2.setFillColor(sf::Color::Black);
 
     sf::Vertex line1[] =
     {
-        sf::Vertex(sf::Vector2f(250.f, 175.f)),
-        sf::Vertex(sf::Vector2f(250.f, 1175.f))
+        sf::Vertex(sf::Vector2f(125.f, 87.5f)),
+        sf::Vertex(sf::Vector2f(125.f, 587.5f))
     };
     sf::Vertex line2[] =
     {
-        sf::Vertex(sf::Vector2f(350.f, 175.f)),
-        sf::Vertex(sf::Vector2f(350.f, 1175.f))
+        sf::Vertex(sf::Vector2f(175.f, 87.5f)),
+        sf::Vertex(sf::Vector2f(175.f, 587.5f))
     };
     sf::Vertex line3[] =
     {
-        sf::Vertex(sf::Vector2f(450.f, 175.f)),
-        sf::Vertex(sf::Vector2f(450.f, 1175.f))
+        sf::Vertex(sf::Vector2f(225.f, 87.5f)),
+        sf::Vertex(sf::Vector2f(225.f, 587.5f))
     };
     sf::Vertex line4[] =
     {
-        sf::Vertex(sf::Vector2f(550.f, 175.f)),
-        sf::Vertex(sf::Vector2f(550.f, 1175.f))
+        sf::Vertex(sf::Vector2f(275.f, 87.5f)),
+        sf::Vertex(sf::Vector2f(275.f, 587.5f))
     };
     sf::Vertex line5[] =
     {
-        sf::Vertex(sf::Vector2f(650.f, 175.f)),
-        sf::Vertex(sf::Vector2f(650.f, 1175.f))
+        sf::Vertex(sf::Vector2f(325.f, 87.5f)),
+        sf::Vertex(sf::Vector2f(325.f, 587.5f))
     };
     sf::Vertex line6[] =
     {
-        sf::Vertex(sf::Vector2f(300.f, 175.f)),
-        sf::Vertex(sf::Vector2f(300.f, 1175.f))
+        sf::Vertex(sf::Vector2f(150.f, 87.5f)),
+        sf::Vertex(sf::Vector2f(150.f, 587.5f))
     };
     sf::Vertex line7[] =
     {
-        sf::Vertex(sf::Vector2f(400.f, 175.f)),
-        sf::Vertex(sf::Vector2f(400.f, 1175.f))
+        sf::Vertex(sf::Vector2f(200.f, 87.5f)),
+        sf::Vertex(sf::Vector2f(200.f, 587.5f))
     };
     sf::Vertex line8[] =
     {
-        sf::Vertex(sf::Vector2f(500.f, 175.f)),
-        sf::Vertex(sf::Vector2f(500.f, 1175.f))
+        sf::Vertex(sf::Vector2f(250.f, 87.5f)),
+        sf::Vertex(sf::Vector2f(250.f, 587.5f))
     };
     sf::Vertex line9[] =
     {
-        sf::Vertex(sf::Vector2f(600.f, 175.f)),
-        sf::Vertex(sf::Vector2f(600.f, 1175.f))
+        sf::Vertex(sf::Vector2f(300.f, 87.5f)),
+        sf::Vertex(sf::Vector2f(300.f, 587.5f))
     };
     sf::Vertex line10[] =
     {
-        sf::Vertex(sf::Vector2f(700.f, 175.f)),
-        sf::Vertex(sf::Vector2f(700.f, 1175.f))
+        sf::Vertex(sf::Vector2f(350.f, 87.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 587.5f))
     };
     sf::Vertex line11[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 1125.f)),
-        sf::Vertex(sf::Vector2f(700.f, 1125.f))
+        sf::Vertex(sf::Vector2f(100.f, 612.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 612.5f))
     };
     sf::Vertex line12[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 1075.f)),
-        sf::Vertex(sf::Vector2f(700.f, 1075.f))
+        sf::Vertex(sf::Vector2f(100.f, 562.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 562.5f))
     };
     sf::Vertex line13[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 1025.f)),
-        sf::Vertex(sf::Vector2f(700.f, 1025.f))
+        sf::Vertex(sf::Vector2f(100.f, 512.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 512.5f))
     };
     sf::Vertex line14[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 925.f)),
-        sf::Vertex(sf::Vector2f(700.f, 925.f))
+        sf::Vertex(sf::Vector2f(100.f, 462.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 462.5f))
     };
     sf::Vertex line15[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 825.f)),
-        sf::Vertex(sf::Vector2f(700.f, 825.f))
+        sf::Vertex(sf::Vector2f(100.f, 412.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 412.5f))
     };
     sf::Vertex line16[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 725.f)),
-        sf::Vertex(sf::Vector2f(700.f, 725.f))
+        sf::Vertex(sf::Vector2f(100.f, 362.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 362.5f))
     };
     sf::Vertex line17[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 625.f)),
-        sf::Vertex(sf::Vector2f(700.f, 625.f))
+        sf::Vertex(sf::Vector2f(100.f, 312.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 312.5f))
     };
     sf::Vertex line18[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 525.f)),
-        sf::Vertex(sf::Vector2f(700.f, 525.f))
+        sf::Vertex(sf::Vector2f(100.f, 262.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 262.5f))
     };
     sf::Vertex line19[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 425.f)),
-        sf::Vertex(sf::Vector2f(700.f, 425.f))
+        sf::Vertex(sf::Vector2f(100.f, 212.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 212.5f))
     };
+    
     sf::Vertex line20[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 425.f)),
-        sf::Vertex(sf::Vector2f(700.f, 425.f))
+        sf::Vertex(sf::Vector2f(100.f, 162.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 162.5f))
     };
     sf::Vertex line21[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 325.f)),
-        sf::Vertex(sf::Vector2f(700.f, 325.f))
+        sf::Vertex(sf::Vector2f(100.f, 112.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 112.5f))
     };
     sf::Vertex line22[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 225.f)),
-        sf::Vertex(sf::Vector2f(700.f, 225.f))
+        sf::Vertex(sf::Vector2f(100.f, 487.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 487.5f))
     };
     sf::Vertex line23[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 975.f)),
-        sf::Vertex(sf::Vector2f(700.f, 975.f))
+        sf::Vertex(sf::Vector2f(100.f, 437.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 437.5f))
     };
     sf::Vertex line24[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 875.f)),
-        sf::Vertex(sf::Vector2f(700.f, 875.f))
+        sf::Vertex(sf::Vector2f(100.f, 387.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 387.5f))
     };
     sf::Vertex line25[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 775.f)),
-        sf::Vertex(sf::Vector2f(700.f, 775.f))
+        sf::Vertex(sf::Vector2f(100.f, 337.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 337.5f))
     };
     sf::Vertex line26[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 675.f)),
-        sf::Vertex(sf::Vector2f(700.f, 675.f))
+        sf::Vertex(sf::Vector2f(100.f, 287.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 287.5f))
     };
     sf::Vertex line27[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 575.f)),
-        sf::Vertex(sf::Vector2f(700.f, 575.f))
+        sf::Vertex(sf::Vector2f(100.f, 237.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 237.5f))
     };
     sf::Vertex line28[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 475.f)),
-        sf::Vertex(sf::Vector2f(700.f, 475.f))
+        sf::Vertex(sf::Vector2f(100.f, 187.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 187.5f))
     };
     sf::Vertex line29[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 375.f)),
-        sf::Vertex(sf::Vector2f(700.f, 375.f))
+        sf::Vertex(sf::Vector2f(100.f, 137.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 137.5f))
     };
     sf::Vertex line30[] =
     {
-        sf::Vertex(sf::Vector2f(200.f, 275.f)),
-        sf::Vertex(sf::Vector2f(700.f, 275.f))
+        sf::Vertex(sf::Vector2f(100.f, 537.5f)),
+        sf::Vertex(sf::Vector2f(350.f, 537.5f))
     };
-
     // Tab bar(sf::Vector2f(size), sf::Color::Magenta, sf::Vector2f(150, 100));
 
 
