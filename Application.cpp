@@ -2,7 +2,7 @@
 
 Application::Application()
 {
-    displayStartUpScreen();
+    //displayStartUpScreen();
 }
 
 Application::~Application()
@@ -52,29 +52,18 @@ void Application::displayMenu()
 
 void Application::displayStartUpScreen()
 {
-    sf::RenderWindow window(sf::VideoMode(500, 500), "Retro Run");
+    sf::RenderWindow window(sf::VideoMode(1000, 1000), "Retro Runner");
    
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
-    sf::RectangleShape background(sf::Vector2f(625.f, 625.f));
-    sf::RectangleShape shape(sf::Vector2f(500.f, 1000.f));
+    sf::RectangleShape background(sf::Vector2f(1000.f, 1000.f));
     background.setFillColor(sf::Color(50, 50, 50));
-    shape.setPosition(200.f, 175.f);
-    shape.setFillColor(sf::Color::Black);
-    shape.setOutlineThickness(5.f);
-    shape.setOutlineColor(sf::Color::Cyan);
-
-    sf::RectangleShape shape2(sf::Vector2f(400.f, 675.f));
-    shape2.setPosition(775.f, 500.f);
-    shape2.setFillColor(sf::Color::Black);
-
- 
 
     Tab bar(sf::Vector2f(size), sf::Color::Magenta, sf::Vector2f(150, 100));
 
     
     sf::Text text;
     sf::Font font;
-    std::string message = "Tetris";
+    std::string message = "Retro Runner";
 
     font.loadFromFile("Teko.ttf");
 
@@ -109,8 +98,6 @@ void Application::displayStartUpScreen()
         }
 
         window.draw(background);
-        window.draw(shape);
-        window.draw(shape2);
 
 
         window.draw(bar);
@@ -127,12 +114,12 @@ void Application::displayStartUpScreen()
     {
         cout << endl << endl << endl << endl << endl << endl << endl <<
             endl << endl << endl << endl << endl;
-        cout << "                                                Starting Application...\n";
-        //Insert Progress Bar here
-        cout << "                                                     Loading...";
-        cout << i << "%";
-        Sleep(50);
-        system("cls");
+        //cout << "                                                Starting Application...\n";
+        ////Insert Progress Bar here
+        //cout << "                                                     Loading...";
+        //cout << i << "%";
+        //Sleep(50);
+        //system("cls");
     }
     system("cls");
 
