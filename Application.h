@@ -19,5 +19,5 @@ private:
 	void displayClosingScreen();
 	//Vector2i getMouseClick();
 
-	Tetris mGame1;
+	//Tetris mGame1;
 };

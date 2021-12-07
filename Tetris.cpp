@@ -52,6 +52,17 @@ void Tetris::displayMenu()
 
 void Tetris::displayStartUpScreen()
 {
+
+}
+
+void Tetris::displayClosingScreen()
+{
+
+}
+
+void Tetris::play()
+{
+    //Plays the game of tetris
     sf::RenderWindow window(sf::VideoMode(1250, 1250), "Tetris");
 
 
@@ -220,7 +231,7 @@ void Tetris::displayStartUpScreen()
         sf::Vertex(sf::Vector2f(700.f, 275.f))
     };
 
-   // Tab bar(sf::Vector2f(size), sf::Color::Magenta, sf::Vector2f(150, 100));
+    // Tab bar(sf::Vector2f(size), sf::Color::Magenta, sf::Vector2f(150, 100));
 
 
     sf::Text text;
@@ -311,16 +322,6 @@ void Tetris::displayStartUpScreen()
 
         //    window.display();
     }
-}
-
-void Tetris::displayClosingScreen()
-{
-
-}
-
-void Tetris::play()
-{
-    //Plays the game of tetris
 }
 
 void Tetris::displayGameRules()

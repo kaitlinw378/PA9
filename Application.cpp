@@ -18,6 +18,7 @@ void Application::runApplication()
 void Application::runMenu()
 {
     int option;
+    Tetris game1;
 
     do {
         displayMenu();
@@ -27,7 +28,7 @@ void Application::runMenu()
         switch (option)
         {
         case 1: //Run tetris
-            this->mGame1.runTetris();
+            game1.runTetris();
             break;
         case 2: //Run other games
             system("pause");
@@ -51,9 +52,8 @@ void Application::displayMenu()
 
 void Application::displayStartUpScreen()
 {
-    sf::RenderWindow window(sf::VideoMode(1000, 1000), "Retro Run");
+    sf::RenderWindow window(sf::VideoMode(500, 500), "Retro Run");
    
-
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
     sf::RectangleShape background(sf::Vector2f(625.f, 625.f));
     sf::RectangleShape shape(sf::Vector2f(500.f, 1000.f));
