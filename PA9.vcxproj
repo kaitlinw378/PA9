@@ -169,6 +169,7 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="GamePiece.h" />
     <ClInclude Include="ProgressBar.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Tab.h" />
     <ClInclude Include="Tetris.h" />
   </ItemGroup>
