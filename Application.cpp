@@ -2,7 +2,7 @@
 
 Application::Application()
 {
-    displayStartUpScreen();
+    //displayStartUpScreen();
 }
 
 Application::~Application()
