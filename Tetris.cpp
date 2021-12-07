@@ -310,17 +310,8 @@ void Tetris::play()
         window.draw(text);
 
 
-        //<<<<<< < HEAD
-        //    //piece.drawPiece(window); //testing piece drawing
-
-        //    //piece.drawPiece(window);
-        //    ====== =
-        //    piece.drawPiece(window); //testing piece drawing
-
-        //>>>>>> > d521e7e1bcdfd1466ee481b805686f1ba1195a6d
-
-
-        //    window.display();
+        //piece.drawPiece(window);
+        window.display();
     }
 }
 
