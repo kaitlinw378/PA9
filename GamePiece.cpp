@@ -56,3 +56,10 @@ void GamePiece::drawPiece(sf::RenderWindow& window) {
 		window.draw(cell);
 	}
 }
+
+void GamePiece::movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
+	const sf::Color& newColor, const sf::Vector2f& newPosition, sf::Color& newOutlineColor, float& newOutlineThickness)
+{
+	Rectangle testRectangle(newSize, newColor, newPosition, newOutlineColor, newOutlineThickness);
+	testRectangle.move(0, 0.01);
+}
