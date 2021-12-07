@@ -56,7 +56,7 @@ void Application::displayStartUpScreen()
 
  
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
-    sf::RectangleShape background(sf::Vector2f(1250.f, 1250.f));
+    sf::RectangleShape background(sf::Vector2f(625.f, 625.f));
     sf::RectangleShape shape(sf::Vector2f(500.f, 1000.f));
     background.setFillColor(sf::Color(50, 50, 50));
     shape.setPosition(200.f, 175.f);
@@ -224,7 +224,7 @@ void Application::displayStartUpScreen()
     
     sf::Text text;
     sf::Font font;
-    std::string message = "Hello World";
+    std::string message = "Tetris";
 
     font.loadFromFile("Teko.ttf");
 
@@ -239,7 +239,7 @@ void Application::displayStartUpScreen()
 
     sf::FloatRect textRect = text.getLocalBounds();
     text.setOrigin(textRect.width / 2, textRect.height / 2);
-    text.setPosition(sf::Vector2f(window.getSize().x / 5.25f, window.getSize().y / 11.5f));
+    text.setPosition(sf::Vector2f(window.getSize().x / 3.75f, window.getSize().y / 11.5f));
 
     text.setStyle(sf::Text::Bold);
 
