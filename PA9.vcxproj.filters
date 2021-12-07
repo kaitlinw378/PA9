@@ -59,4 +59,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="Anton.ttf" />
+  </ItemGroup>
 </Project>
