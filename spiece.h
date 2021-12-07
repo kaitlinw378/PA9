@@ -6,7 +6,7 @@
 using sf::Vector2i;
 using std::vector;
 
-class Spiece {
+class Spiece{
 public:
 	vector<Vector2i> createSPiece();
 private:
