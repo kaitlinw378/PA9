@@ -10,7 +10,9 @@ void GamePiece::getPieceType() {
 	//currentPieceType = lpiece.createLPiece();
 	//currentPieceType = jpiece.createJPiece();
 	
-	currentPieceType = spiece.createSPiece();
+	//currentPieceType = spiece.createSPiece();
+	//currentPieceType = zpiece.createZPiece();
+	currentPieceType = tpiece.createTPiece();
 
 	//srand(time(0));
 	//int randomNum = (rand() % 7) + 1;
