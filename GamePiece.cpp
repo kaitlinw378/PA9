@@ -4,8 +4,14 @@ void GamePiece::getPieceType() {
 	//generate random number between 1 and 7 for each piece type
 	//use switch to create that type?
 	//return piece type
-	currentPieceType = ipiece.createIPiece();
 	
+	//currentPieceType = ipiece.createIPiece();
+	//currentPieceType = opiece.createOPiece();
+	//currentPieceType = lpiece.createLPiece();
+	//currentPieceType = jpiece.createJPiece();
+	
+	currentPieceType = spiece.createSPiece();
+
 	//srand(time(0));
 	//int randomNum = (rand() % 7) + 1;
 	//switch (randomNum) {
@@ -41,9 +47,8 @@ void GamePiece::drawPiece(sf::RenderWindow& window) {
 	sf::RectangleShape cell(sf::Vector2f(50.f, 50.f));
 	cell.setPosition(window.getSize().x / 2.0f, window.getSize().y / 2.0f);
 	cell.setFillColor(sf::Color::Red);
-	cell.setOutlineThickness(5);
 	cell.setOutlineColor(sf::Color::Green);
-
+	//cell.setOutlineThickness(5);
 	for (Vector2i block : currentPieceType)
 	{
 		cell.setPosition(block.x * 50, block.y * 50);

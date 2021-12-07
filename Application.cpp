@@ -108,6 +108,9 @@ void Application::displayStartUpScreen()
         window.draw(bar);
        
         window.draw(text);
+
+        piece.drawPiece(window);
+
         window.display();
 
         
