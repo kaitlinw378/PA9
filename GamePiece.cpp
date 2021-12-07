@@ -4,15 +4,13 @@ void GamePiece::getPieceType() {
 	//generate random number between 1 and 7 for each piece type
 	//use switch to create that type?
 	//return piece type
-	
-	//currentPieceType = ipiece.createIPiece();
+	// 
+	currentPieceType = ipiece.createIPiece();
 	//currentPieceType = opiece.createOPiece();
 	//currentPieceType = lpiece.createLPiece();
 	//currentPieceType = jpiece.createJPiece();
 	
-	//currentPieceType = spiece.createSPiece();
-	//currentPieceType = zpiece.createZPiece();
-	currentPieceType = tpiece.createTPiece();
+	//currentPieceType = jpiece.createJPiece();
 
 	//srand(time(0));
 	//int randomNum = (rand() % 7) + 1;

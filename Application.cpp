@@ -241,6 +241,7 @@ void Application::displayStartUpScreen()
 
     //testing gamepiece
     GamePiece piece;
+    //Ipiece ipiece;
     
     //piece.createPiece();
 
