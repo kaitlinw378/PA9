@@ -54,7 +54,7 @@ void Application::displayStartUpScreen()
     sf::RenderWindow window(sf::VideoMode(1250, 1250), "Tetris");
    
 
-    sf::Vector2f size(window.getSize().x / 2, window.getSize().y / 40);
+ 
 
     sf::Vector2f size(window.getSize().x / 2, window.getSize().y / 40);
     sf::RectangleShape background(sf::Vector2f(1250.f, 1250.f));
@@ -103,8 +103,8 @@ void Application::displayStartUpScreen()
                 window.close();
         }
 
-        //window.draw(background);
-        //window.draw(shape);
+        window.draw(background);
+        window.draw(shape);
         window.draw(bar);
        
         window.draw(text);
