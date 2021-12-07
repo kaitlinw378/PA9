@@ -55,12 +55,7 @@ void Application::displayStartUpScreen()
    
 
  
-<<<<<<< HEAD
-    sf::Vector2f size(window.getSize().x / 4, window.getSize().y / 25);
-=======
-
-    sf::Vector2f size(window.getSize().x / 2, window.getSize().y / 40);
->>>>>>> 06e2587f6db6d748903d6a870ed65cd46c6b01e7
+    sf::Vector2f size(window.getSize().x / 4, window.getSize().y / 20);
     sf::RectangleShape background(sf::Vector2f(1250.f, 1250.f));
     sf::RectangleShape shape(sf::Vector2f(500.f, 1000.f));
     background.setFillColor(sf::Color(50, 50, 50));
@@ -69,7 +64,7 @@ void Application::displayStartUpScreen()
     shape.setOutlineThickness(5.f);
     shape.setOutlineColor(sf::Color::Cyan);
 
-    Tab bar(sf::Vector2f(size), sf::Color::Magenta, sf::Vector2f(200, 100));
+    Tab bar(sf::Vector2f(size), sf::Color::Magenta, sf::Vector2f(150, 100));
 
     
     sf::Text text;
@@ -89,7 +84,7 @@ void Application::displayStartUpScreen()
 
     sf::FloatRect textRect = text.getLocalBounds();
     text.setOrigin(textRect.width / 2, textRect.height / 2);
-    text.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f));
+    text.setPosition(sf::Vector2f(window.getSize().x / 5.25f, window.getSize().y / 11.5f));
 
     text.setStyle(sf::Text::Bold);
 
