@@ -10,7 +10,7 @@ public:
 	void displayPiece();
 
 private:
-
+	
 	Vector2i s1[4];
 	
 };
