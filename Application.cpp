@@ -62,7 +62,7 @@ void Application::displayStartUpScreen()
     sf::Font font;
     std::string message = "Hello World";
 
-    font.loadFromFile("Anton.ttf");
+    font.loadFromFile("Teko.ttf");
 
 
     text.setFont(font);
