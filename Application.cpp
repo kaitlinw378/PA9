@@ -220,7 +220,7 @@ void Application::displayStartUpScreen()
     
     sf::Text text;
     sf::Font font;
-    std::string message = "Hello World";
+    std::string message = "Tetris";
 
     font.loadFromFile("Teko.ttf");
 
@@ -235,7 +235,7 @@ void Application::displayStartUpScreen()
 
     sf::FloatRect textRect = text.getLocalBounds();
     text.setOrigin(textRect.width / 2, textRect.height / 2);
-    text.setPosition(sf::Vector2f(window.getSize().x / 5.25f, window.getSize().y / 11.5f));
+    text.setPosition(sf::Vector2f(window.getSize().x / 3.75f, window.getSize().y / 11.5f));
 
     text.setStyle(sf::Text::Bold);
 
