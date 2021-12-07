@@ -2,6 +2,7 @@
 
 #include "Tetris.h"
 #include <Windows.h>
+#include "Tab.h"
 
 class Application
 {

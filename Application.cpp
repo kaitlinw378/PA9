@@ -51,6 +51,53 @@ void Application::displayMenu()
 
 void Application::displayStartUpScreen()
 {
+    sf::RenderWindow window(sf::VideoMode(750, 750), "Tetris");
+
+    sf::Vector2f size(window.getSize().x / 2, window.getSize().y / 40);
+
+    Tab bar(sf::Vector2f(size), sf::Color::Magenta,
+        sf::Vector2f(100, 100));
+
+    /*@font - face{ font - family: "Helvetica"; src: url('../fonts/Helvetica.ttf') format('truetype'); }
+    @font - face{ font - family: "Helvetica Neue"; src: url('../fonts/HelveticaNeue.ttf') format('truetype'); }*/
+
+
+    sf::Text text;
+    sf::Font font;
+    std::string message = "Hello World";
+
+    font.loadFromFile("helvetica.ttf");
+
+
+    text.setFont(font);
+
+    text.setString(message);
+
+    text.setCharacterSize(50);
+
+    text.setFillColor(sf::Color::Cyan);
+
+    sf::FloatRect textRect = text.getLocalBounds();
+    text.setOrigin(textRect.width / 2, textRect.height / 2);
+    text.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f));
+
+    text.setStyle(sf::Text::Bold);
+
+    while (window.isOpen())
+    {
+
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.draw(bar);
+        window.draw(text);
+        window.display();
+
+    }
     for (int i = 0; i < 100; ++i)
     {
         cout << endl << endl << endl << endl << endl << endl << endl <<

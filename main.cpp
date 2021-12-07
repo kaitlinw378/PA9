@@ -11,12 +11,12 @@ using std::endl;
 
 int main() {
 	
-	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
+	//sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
 
-	/*Application obj;
-	obj.runApplication();*/
+	Application obj;
+	obj.runApplication();
 
-	//ProgressBar bar()
+	
 
 
 	return 0;
