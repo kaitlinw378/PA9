@@ -55,25 +55,15 @@ void Application::displayStartUpScreen()
    
 
     sf::Vector2f size(window.getSize().x / 2, window.getSize().y / 40);
-    sf::RectangleShape background(sf::Vector2f(1250.f, 1250.f));
-    sf::RectangleShape shape(sf::Vector2f(500.f, 1000.f));
-    background.setFillColor(sf::Color(50, 50, 50));
-    shape.setPosition(250.f, 150.f);
-    shape.setFillColor(sf::Color::Black);
-    shape.setOutlineThickness(5.f);
-    shape.setOutlineColor(sf::Color::Cyan);
-    Tab bar(sf::Vector2f(size), sf::Color::Magenta,
-        sf::Vector2f(100, 100));
 
-    /*@font - face{ font - family: "Helvetica"; src: url('../fonts/Helvetica.ttf') format('truetype'); }
-    @font - face{ font - family: "Helvetica Neue"; src: url('../fonts/HelveticaNeue.ttf') format('truetype'); }*/
+    Tab bar(sf::Vector2f(size), sf::Color::Magenta, sf::Vector2f(100, 100));
 
-
+    
     sf::Text text;
     sf::Font font;
     std::string message = "Hello World";
 
-    font.loadFromFile("helvetica.ttf");
+    font.loadFromFile("Teko.ttf");
 
 
     text.setFont(font);
