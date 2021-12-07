@@ -8,6 +8,8 @@
 #include "lpiece.h"
 #include "jpiece.h"
 #include "spiece.h"
+#include "zpiece.h"
+#include "tpiece.h"
 
 class GamePiece{
 public:
@@ -22,4 +24,6 @@ private:
 	Lpiece lpiece;
 	Jpiece jpiece;
 	Spiece spiece;
+	Zpiece zpiece;
+	Tpiece tpiece;
 };
