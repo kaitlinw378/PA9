@@ -294,23 +294,23 @@ void Tetris::displayStartUpScreen()
         window.draw(line29, 2, sf::Lines);
         window.draw(line30, 2, sf::Lines);
 
-        window.draw(bar);
+        //window.draw(bar);
 
         window.draw(text);
 
 
-        <<<<<< < HEAD
-            //piece.drawPiece(window); //testing piece drawing
+        //<<<<<< < HEAD
+        //    //piece.drawPiece(window); //testing piece drawing
 
-            //piece.drawPiece(window);
-            ====== =
-            piece.drawPiece(window); //testing piece drawing
+        //    //piece.drawPiece(window);
+        //    ====== =
+        //    piece.drawPiece(window); //testing piece drawing
 
-        >>>>>> > d521e7e1bcdfd1466ee481b805686f1ba1195a6d
+        //>>>>>> > d521e7e1bcdfd1466ee481b805686f1ba1195a6d
 
 
-            window.display();
-
+        //    window.display();
+    }
 }
 
 void Tetris::displayClosingScreen()
