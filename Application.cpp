@@ -55,18 +55,14 @@ void Application::displayStartUpScreen()
 
     sf::Vector2f size(window.getSize().x / 2, window.getSize().y / 40);
 
-    Tab bar(sf::Vector2f(size), sf::Color::Magenta,
-        sf::Vector2f(100, 100));
+    Tab bar(sf::Vector2f(size), sf::Color::Magenta, sf::Vector2f(100, 100));
 
-    /*@font - face{ font - family: "Helvetica"; src: url('../fonts/Helvetica.ttf') format('truetype'); }
-    @font - face{ font - family: "Helvetica Neue"; src: url('../fonts/HelveticaNeue.ttf') format('truetype'); }*/
-
-
+    
     sf::Text text;
     sf::Font font;
     std::string message = "Hello World";
 
-    font.loadFromFile("helvetica.ttf");
+    font.loadFromFile("Anton.ttf");
 
 
     text.setFont(font);
