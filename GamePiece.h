@@ -7,7 +7,7 @@
 
 class GamePiece{
 public:
-	//vector<Vector2i> getPieceType();
+	void getPieceType();
 	void drawPiece(sf::RenderWindow& window);
 private:
 	vector<Vector2i> currentPieceType;
