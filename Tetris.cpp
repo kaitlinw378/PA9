@@ -63,13 +63,13 @@ void Tetris::displayClosingScreen()
 void Tetris::play()
 {
     //Plays the game of tetris
-    sf::RenderWindow window(sf::VideoMode(1250, 1250), "Tetris");
+    sf::RenderWindow window(sf::VideoMode(625, 625), "Tetris");
 
 
 
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
     sf::RectangleShape background(sf::Vector2f(625.f, 625.f));
-    sf::RectangleShape shape(sf::Vector2f(500.f, 1000.f));
+    sf::RectangleShape shape(sf::Vector2f(500.f, 600.f));
     background.setFillColor(sf::Color(50, 50, 50));
     shape.setPosition(200.f, 175.f);
     shape.setFillColor(sf::Color::Black);
@@ -320,7 +320,7 @@ void Tetris::play()
         //>>>>>> > d521e7e1bcdfd1466ee481b805686f1ba1195a6d
 
 
-        //    window.display();
+        window.display();
     }
 }
 
