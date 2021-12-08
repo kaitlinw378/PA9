@@ -21,6 +21,7 @@ public:
 
 private:
 	vector<Vector2i> currentPieceType;
+	int curPieceCheck;
 	vector<Vector2i> nextPieceType;
 
 	Ipiece ipiece;

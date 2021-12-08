@@ -3,6 +3,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 //#include <Mouse.hpp>
+#include "GamePiece.h"
 
 using sf::Vector2i;
 using sf::Window;

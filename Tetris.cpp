@@ -256,7 +256,7 @@ void Tetris::play()
     text.setStyle(sf::Text::Bold);
 
     //testing gamepiece
-    //GamePiece piece;
+    GamePiece piece;
 
     //piece.createPiece();
 
@@ -308,7 +308,7 @@ void Tetris::play()
         //window.draw(bar);
 
         window.draw(text);
-
+        piece.drawPiece(window);
 
         //<<<<<< < HEAD
         //    //piece.drawPiece(window); //testing piece drawing
