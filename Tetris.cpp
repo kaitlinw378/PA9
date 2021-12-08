@@ -287,7 +287,7 @@ void Tetris::play()
         window.draw(line8, 2, sf::Lines);
         window.draw(line9, 2, sf::Lines);
         window.draw(line10, 2, sf::Lines);
-        window.draw(line11, 2, sf::Lines);
+        //window.draw(line11, 2, sf::Lines);
         window.draw(line12, 2, sf::Lines);
         window.draw(line13, 2, sf::Lines);
         window.draw(line14, 2, sf::Lines);
