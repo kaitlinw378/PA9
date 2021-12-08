@@ -7,7 +7,7 @@ class Rectangle : public sf::RectangleShape
 public:
 	Rectangle (const sf::Vector2f& newSize,
 		const sf::Color& newColor,
-		const sf::Vector2f& newPosition, sf::Color& newOutlineColor, float& newOutlineThickness) :
+		const sf::Vector2f& newPosition, const sf::Color& newOutlineColor, const float& newOutlineThickness) :
 		sf::RectangleShape(newSize)
 	{
 		this->setPosition(newPosition);
@@ -17,4 +17,5 @@ public:
 	}
 
 private:
+
 };
