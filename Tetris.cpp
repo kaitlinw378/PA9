@@ -18,7 +18,11 @@ void Tetris::runTetris()
 
 void Tetris::runMenu()
 {
-    displayStartUpScreen();
+    sf::RenderWindow window(sf::VideoMode(625, 625), "Tetris");
+
+
+
+
     int option;
 
     do {
