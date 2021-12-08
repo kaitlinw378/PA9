@@ -54,9 +54,9 @@ void GamePiece::getPieceType(int randomNum) {
 	}
 }
 
-//sf::RectangleShape GamePiece::getShape() {
-//	return this->gamePiece;
-//}
+vector<Vector2i> GamePiece::getShape() {
+	return this->currentPieceType;
+}
 //
 //void GamePiece::setShape(sf::RectangleShape& sh) {
 //	this->gamePiece = sh;
@@ -110,21 +110,23 @@ void GamePiece::controlPiece(sf::RenderWindow &window) {
 	//cube.setOutlineColor(sf::Color::Green);
 
 	//cell.setOutlineThickness(5);
+
 	for (Vector2i block : currentPieceType)
 	{
 		cube.setPosition((block.x * 25) + 175, block.y * 25);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 			//block.y += 1;
 			cube.move(0, 25);
+			//timeDelay();
+			
 		}
-		window.draw(cube);
 		//controlPiece(window);
 		//cube.setPosition((block.x * 25) + 175, block.y * 25);
 		/*while (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 			cube.move(0, 25);
 		}*/
 		//cube.move(0, 25);
-	
+		window.draw(cube);
 		
 	}
 	//window.draw(curr);
