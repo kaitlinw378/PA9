@@ -15,9 +15,10 @@
 class GamePiece{
 public:
 	//void getPieceType();
-	sf::RectangleShape drawPiece(sf::RenderWindow& window);
+	void drawPiece();
 	int generateChoice();
 	void getPieceType(int randomNum);
+	void timeDelay();
 	//sf::RectangleShape drawPiece(sf::RenderWindow& window);
 	//sf::RectangleShape getShape();
 	//void setShape(sf::RectangleShape& sh);

@@ -1,9 +1,10 @@
 #include "GamePiece.h"
 
 int GamePiece::generateChoice() {
-	srand(time(0));
+	//srand(time(0));
 
-	int randomNum = (rand() % 7) + 1;
+	//int randomNum = (rand() % 7) + 1;
+	int randomNum = 1;
 	return randomNum;
 }
 
@@ -21,7 +22,6 @@ void GamePiece::getPieceType(int randomNum) {
 	//currentPieceType = zpiece.createZPiece();
 	//currentPieceType = spiece.createSPiece();
 	//currentPieceType = tpiece.createTPiece();
-	
 	switch (randomNum) {
 	case 1:
 		//i-shape
@@ -68,33 +68,84 @@ void GamePiece::getPieceType(int randomNum) {
 	//cell.setFillColor(sf::Color::Red);
 	//cell.setOutlineColor(sf::Color::Green);
 
-sf::RectangleShape GamePiece::drawPiece(sf::RenderWindow& window) {
+void GamePiece::timeDelay() {
+	int t = 0;
+	while (t < 10000) {
+		t++;
+	}
+}
+
+void GamePiece::drawPiece() {
 	this->pieceDrop = generateChoice();
 	getPieceType(pieceDrop);
 	
+	//for (Vector2i block : currentPieceType) {
+	//	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+	//		cube.move(0, 25);
+	//		//int x = cube.getPosition().x;
+	//		//int y = cube.getPosition().y;
+	//		//y += 25;
+	//		cube.setPosition((block.x * 25) + 175, (block.y * 25) + 25);
+	//		window.draw(cube);
+	//	}
+	//}
+	//timeDelay();
+
+	//for (Vector2i bl : currentPieceType) {
+	//	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+	//		bl.y += 25;
+	//		cube.move(0, 25);
+	//		cube.setPosition((bl.x * 25) + 175, bl.y);
+	//	}
+	//	//timeDelay();
+	//	window.draw(cube);
+	//}
+}
+
+void GamePiece::controlPiece(sf::RenderWindow &window) {
+	//sf::RectangleShape curr = drawPiece(window);
+	drawPiece();
 	sf::RectangleShape cube(sf::Vector2f(25.f, 25.f));
 	cube.setFillColor(sf::Color::Red);
-	cube.setOutlineColor(sf::Color::Green);
+	//cube.setOutlineColor(sf::Color::Green);
 
 	//cell.setOutlineThickness(5);
 	for (Vector2i block : currentPieceType)
 	{
-		cube.setPosition((block.x * 25)+175, block.y * 25);
-
-		//window.draw(cube);
+		cube.setPosition((block.x * 25) + 175, block.y * 25);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+			//block.y += 1;
+			cube.move(0, 25);
+		}
+		window.draw(cube);
+		//controlPiece(window);
+		//cube.setPosition((block.x * 25) + 175, block.y * 25);
+		/*while (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+			cube.move(0, 25);
+		}*/
+		//cube.move(0, 25);
+	
+		
 	}
-	return cube;
-}
+	//window.draw(curr);
 
-void GamePiece::controlPiece(sf::RenderWindow &window) {
-	sf::RectangleShape curr; //= drawPiece(window);
-	window.draw(curr);
-	for (Vector2i block : currentPieceType)
-	{
-		//curr.setPosition((block.x * 25) + 175, block.y * 25);
-		curr.move(0, 25);
-		//window.draw(curr);
-	}
+	//for (Vector2i block : currentPieceType)
+	//{
+	//	//.setPosition((block.x * 25) + 175, block.y * 25);
+
+	//	block.y -= 25;
+	//	
+
+	//	//window.draw(cube);
+	//}
+	//for (Vector2i block : currentPieceType)
+	//{
+
+
+	//	//curr.setPosition((block.x * 25) + 175, block.y * 25);
+	//	curr.move(0, 25);
+	//	//window.draw(curr);
+	//}
 	
 
 	//for (Vector2i block : currentPieceType) {

@@ -337,49 +337,26 @@ void Tetris::play()
     // Tab bar(sf::Vector2f(size), sf::Color::Magenta, sf::Vector2f(150, 100));
 
 
-    sf::Text text1, text2, text3, text4;
+    sf::Text text;
     sf::Font font;
-    std::string message1 = "Tetris", message2 = "Upcoming Pieces", message3 = "Current Score", message4 = "High Score";
+    std::string message = "Tetris";
 
     font.loadFromFile("Teko.ttf");
 
 
-    text1.setFont(font);
-    text2.setFont(font);
-    text3.setFont(font);
-    text4.setFont(font);
+    text.setFont(font);
 
-    text1.setString(message1);
-    text2.setString(message2);
-    text3.setString(message3);
-    text4.setString(message4);
+    text.setString(message);
 
-    text1.setCharacterSize(50);
-    text2.setCharacterSize(30);
-    text3.setCharacterSize(40);
-    text4.setCharacterSize(40);
+    text.setCharacterSize(50);
 
-    text1.setFillColor(sf::Color::Cyan);
-    text2.setFillColor(sf::Color::Cyan);
-    text3.setFillColor(sf::Color::Cyan);
-    text4.setFillColor(sf::Color::Cyan);
+    text.setFillColor(sf::Color::Cyan);
 
-    sf::FloatRect textRect1 = text1.getLocalBounds(), textRect2 = text2.getLocalBounds(), textRect3 = text3.getLocalBounds(), 
-        textRect4 = text4.getLocalBounds();
-    text1.setOrigin(textRect1.width / 2, textRect1.height / 2);
-    text2.setOrigin(textRect2.width / 2, textRect2.height / 2);
-    text3.setOrigin(textRect3.width / 2, textRect3.height / 2);
-    text4.setOrigin(textRect4.width / 2, textRect4.height / 2);
+    sf::FloatRect textRect = text.getLocalBounds();
+    text.setOrigin(textRect.width / 2, textRect.height / 2);
+    text.setPosition(sf::Vector2f(window.getSize().x / 3.75f, window.getSize().y / 11.5f));
 
-    text1.setPosition(sf::Vector2f(window.getSize().x / 2.85f, window.getSize().y / 30.f));
-    text2.setPosition(sf::Vector2f(window.getSize().x / 1.3f, window.getSize().y / 20.5f));
-    text3.setPosition(sf::Vector2f(window.getSize().x / 1.305f, window.getSize().y / 2.45f));
-    text4.setPosition(sf::Vector2f(window.getSize().x / 1.30f, window.getSize().y / 1.5f));
-
-    text1.setStyle(sf::Text::Bold);
-    text2.setStyle(sf::Text::Bold);
-    text3.setStyle(sf::Text::Bold);
-    text4.setStyle(sf::Text::Bold);
+    text.setStyle(sf::Text::Bold);
 
     //testing gamepiece
     GamePiece piece;
@@ -434,10 +411,7 @@ void Tetris::play()
 
         //window.draw(bar);
 
-        window.draw(text1);
-        window.draw(text2);
-        window.draw(text3);
-        window.draw(text4);
+        window.draw(text);
         piece.controlPiece(window);
         
         //<<<<<< < HEAD
