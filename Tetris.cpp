@@ -70,13 +70,10 @@ void Tetris::play()
 
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
     sf::RectangleShape background(sf::Vector2f(625.f, 625.f));
-    sf::RectangleShape shape(sf::Vector2f(250.f, 500.f));
+    
     Rectangle board(sf::Vector2f(250, 500), sf::Color::Black, sf::Vector2f(100, 87.5), sf::Color::Cyan, 2.5);
     background.setFillColor(sf::Color(50, 50, 50));
-    shape.setPosition(100.f, 87.5f);
-    shape.setFillColor(sf::Color::Black);
-    shape.setOutlineThickness(2.5f);
-    shape.setOutlineColor(sf::Color::Cyan);
+   
 
     sf::RectangleShape shape2(sf::Vector2f(200.f, 337.5f));
     shape2.setPosition(387.5f, 250.f);
