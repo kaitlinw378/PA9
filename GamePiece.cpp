@@ -1,6 +1,13 @@
 #include "GamePiece.h"
 
-void GamePiece::getPieceType() {
+int GamePiece::generateChoice() {
+	srand(time(0));
+
+	int randomNum = (rand() % 7) + 1;
+	return randomNum;
+}
+
+void GamePiece::getPieceType(int randomNum) {
 	//generate random number between 1 and 7 for each piece type
 	//use switch to create that type?
 	//return piece type
@@ -14,8 +21,7 @@ void GamePiece::getPieceType() {
 	//currentPieceType = zpiece.createZPiece();
 	//currentPieceType = spiece.createSPiece();
 	//currentPieceType = tpiece.createTPiece();
-	srand(time(0));
-	int randomNum = (rand() % 7) + 1;
+	
 	switch (randomNum) {
 	case 1:
 		//i-shape
@@ -48,9 +54,17 @@ void GamePiece::getPieceType() {
 	}
 }
 
+//sf::RectangleShape GamePiece::getShape() {
+//	return this->gamePiece;
+//}
+//
+//void GamePiece::setShape(sf::RectangleShape& sh) {
+//	this->gamePiece = sh;
+//}
 
-void GamePiece::drawPiece(sf::RenderWindow& window) {
-	getPieceType();
+sf::RectangleShape GamePiece::drawPiece(sf::RenderWindow& window) {
+	this->pieceDrop = generateChoice();
+	getPieceType(pieceDrop);
 	
 	sf::RectangleShape cube(sf::Vector2f(25.f, 25.f));
 	cube.setFillColor(sf::Color::Red);
@@ -60,8 +74,30 @@ void GamePiece::drawPiece(sf::RenderWindow& window) {
 	{
 		cube.setPosition((block.x * 25)+175, block.y * 25);
 
-		window.draw(cube);
+		//window.draw(cube);
 	}
+	return cube;
+}
+
+void GamePiece::controlPiece(sf::RenderWindow &window) {
+	sf::RectangleShape curr = drawPiece(window);
+	window.draw(curr);
+	for (Vector2i block : currentPieceType)
+	{
+		//curr.setPosition((block.x * 25) + 175, block.y * 25);
+		curr.move(0, 25);
+		//window.draw(curr);
+	}
+	
+
+	//for (Vector2i block : currentPieceType) {
+	//	
+	//}
+
+	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+	//	//currentPieceType.move(0, 0.01);
+	//	
+	//}
 }
 
 void GamePiece::movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
@@ -69,4 +105,5 @@ void GamePiece::movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
 {
 	Rectangle testRectangle(newSize, newColor, newPosition, newOutlineColor, newOutlineThickness);
 	testRectangle.move(0, 0.01);
+
 }

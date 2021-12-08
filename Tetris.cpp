@@ -256,7 +256,7 @@ void Tetris::play()
 
     //testing gamepiece
     GamePiece piece;
-
+  
     //piece.createPiece();
 
     while (window.isOpen())
@@ -308,8 +308,8 @@ void Tetris::play()
         //window.draw(bar);
 
         window.draw(text);
-        piece.drawPiece(window);
-
+        piece.controlPiece(window);
+        
         //<<<<<< < HEAD
         //    //piece.drawPiece(window); //testing piece drawing
 
