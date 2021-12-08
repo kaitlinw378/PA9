@@ -20,7 +20,7 @@ public:
 	void getPieceType(int randomNum);
 	void timeDelay();
 	//sf::RectangleShape drawPiece(sf::RenderWindow& window);
-	//sf::RectangleShape getShape();
+	vector<Vector2i> getShape();
 	//void setShape(sf::RectangleShape& sh);
 	void controlPiece(sf::RenderWindow &window);
 	/*void movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
