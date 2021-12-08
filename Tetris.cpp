@@ -466,3 +466,29 @@ void Tetris::viewScores()
     //read in scores
     //display scores
 }
+
+int calculateScore(int& currentLevel, int& numLinesCleared)
+{
+    int score = 0;
+    if (numLinesCleared == 1)
+    {
+        score = score + 40 + (40 * currentLevel);
+    }
+    else if (numLinesCleared == 2)
+    {
+        score = score + 100 + (100 * currentLevel);
+    }
+    else if (numLinesCleared == 3)
+    {
+        score = score + 400 + (400 * currentLevel);
+    }
+    else if (numLinesCleared == 4)
+    {
+        score = score + 1200 + (1200 * currentLevel);
+    }
+    else
+    {
+        score;
+    }
+    return score;
+}
