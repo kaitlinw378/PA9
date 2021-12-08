@@ -28,5 +28,6 @@ private:
 	void play();
 	void displayGameRules();
 	void viewScores();
+	int calculateScore(int& currentLevel, int& numLinesCleared);
 
 };
