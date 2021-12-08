@@ -339,7 +339,7 @@ void Tetris::play()
     // Text onscreen while the game is being played
     sf::Text text1, text2, text3, text4;
     sf::Font font;
-    std::string message1 = "Tetris", message2 = "Upcoming Pieces", message3 = "Current Score", message4 = "High Score";
+    std::string message1 = "Tetris", message2 = "Next Piece", message3 = "Current Score", message4 = "High Score";
 
     font.loadFromFile("Teko.ttf");
 
@@ -355,7 +355,7 @@ void Tetris::play()
     text4.setString(message4);
 
     text1.setCharacterSize(50);
-    text2.setCharacterSize(30);
+    text2.setCharacterSize(40);
     text3.setCharacterSize(40);
     text4.setCharacterSize(40);
 
@@ -371,10 +371,10 @@ void Tetris::play()
     text3.setOrigin(textRect3.width / 2, textRect3.height / 2);
     text4.setOrigin(textRect4.width / 2, textRect4.height / 2);
 
-    text1.setPosition(sf::Vector2f(window.getSize().x / 2.85f, window.getSize().y / 35.f));
-    text2.setPosition(sf::Vector2f(window.getSize().x / 1.29f, window.getSize().y / 20.5f));
-    text3.setPosition(sf::Vector2f(window.getSize().x / 1.29, window.getSize().y / 2.4f));
-    text4.setPosition(sf::Vector2f(window.getSize().x / 1.285f, window.getSize().y / 1.5f));
+    text1.setPosition(sf::Vector2f(window.getSize().x / 2.82f, window.getSize().y / 35.f));
+    text2.setPosition(sf::Vector2f(window.getSize().x / 1.28f, window.getSize().y / 13.0f));
+    text3.setPosition(sf::Vector2f(window.getSize().x / 1.29f, window.getSize().y / 2.2f));
+    text4.setPosition(sf::Vector2f(window.getSize().x / 1.285f, window.getSize().y / 1.38f));
 
 
     text1.setStyle(sf::Text::Bold);
@@ -437,7 +437,7 @@ void Tetris::play()
         window.draw(text2);
         window.draw(text3);
         window.draw(text4);
-        piece.controlPiece(window);
+        //piece.controlPiece(window);
         
         //<<<<<< < HEAD
         //    //piece.drawPiece(window); //testing piece drawing
