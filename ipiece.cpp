@@ -7,4 +7,3 @@ vector<Vector2i> Ipiece::createIPiece() {
 	s1.push_back(sf::Vector2i{ 1,3 });
 	return s1;
 }
-

@@ -278,8 +278,8 @@ void Tetris::play()
     text4.setStyle(sf::Text::Bold);
 
     //testing gamepiece
-    //GamePiece piece;
-
+    GamePiece piece;
+  
     //piece.createPiece();
 
     while (window.isOpen())
@@ -329,12 +329,13 @@ void Tetris::play()
         window.draw(line30, 2, sf::Lines);
 
         //window.draw(bar);
-        window.draw(text4);
+
         window.draw(text1);
         window.draw(text2);
         window.draw(text3);
-
-
+        window.draw(text4);
+        piece.controlPiece(window);
+        
         //<<<<<< < HEAD
         //    //piece.drawPiece(window); //testing piece drawing
 
