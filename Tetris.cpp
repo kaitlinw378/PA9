@@ -71,7 +71,7 @@ void Tetris::play()
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
     sf::RectangleShape background(sf::Vector2f(625.f, 625.f));
     sf::RectangleShape shape(sf::Vector2f(250.f, 500.f));
-    Rectangle board(sf::Vector2f(250, 500), sf::Color::Blue, sf::Vector2f(100, 87.5), sf::Color::Cyan, 2.5);
+    Rectangle board(sf::Vector2f(250, 500), sf::Color::Black, sf::Vector2f(100, 87.5), sf::Color::Cyan, 2.5);
     background.setFillColor(sf::Color(50, 50, 50));
     shape.setPosition(100.f, 87.5f);
     shape.setFillColor(sf::Color::Black);
@@ -272,10 +272,10 @@ void Tetris::play()
                 window.close();
         }
 
-        window.draw(board);
         window.draw(background);
         //window.draw(shape);
         window.draw(shape2);
+        window.draw(board);
 
         window.draw(line1, 2, sf::Lines);
         window.draw(line2, 2, sf::Lines);
