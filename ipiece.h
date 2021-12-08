@@ -9,7 +9,6 @@ using std::vector;
 class Ipiece {
 public:
 	vector<Vector2i> createIPiece();
-
 private:
 	vector<Vector2i> s1;
 };
