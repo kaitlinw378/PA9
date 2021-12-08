@@ -19,15 +19,34 @@ void Application::runMenu()
 {
     int option;
     Tetris game1;
+    sf::Vector2i mousePos;
+    option = 0;
+    
+    sf::RenderWindow window(sf::VideoMode(1000, 1000), "Retro Runner");
 
-    do {
-        displayMenu();
-        //Make option decided by mouse click
-        option = 0;
-        cin >> option;
+        displayMenu(window);
+        while (window.isOpen())
+        {
+            sf::Event event;
+            while (window.pollEvent(event))
+            {
+                if (event.type == sf::Event::Closed)
+                    window.close();
+            }
+            while (!sf::Mouse::isButtonPressed(sf::Mouse::Left));
+
+            mousePos = sf::Mouse::getPosition(window);
+
+            if ((mousePos.x > 150 && mousePos.x < 300) && (mousePos.y > 300 && mousePos.y < 450))
+            {
+                option = 1;
+                window.close();
+            }
+        }
+ 
         switch (option)
         {
-        case 1: //Run tetris
+        case 1: 
             game1.runTetris();
             break;
         case 2: //Run other games
@@ -41,19 +60,10 @@ void Application::runMenu()
             break;
         }
         system("cls");
-    } while (option != 3);
 }
 
-void Application::displayMenu()
+void Application::displayMenu(sf::RenderWindow& window)
 {
-    cout << "*Displaying Menu*" << endl << endl;
-    cout << "(1) Tetris \n(3) Exit" << endl << endl;
-}
-
-void Application::displayStartUpScreen()
-{
-    sf::RenderWindow window(sf::VideoMode(1000, 1000), "Retro Runner");
-   
     //sf::Vector2f size(window.getSize().x / 1.5f, window.getSize().y / 20.f);
     sf::Vector2f size(150, 150);
     sf::Vector2f pos(50, 50);
@@ -69,68 +79,62 @@ void Application::displayStartUpScreen()
     Tab bar4(sf::Vector2f(size), sf::Color::Black, sf::Vector2f(425, 600));
     Tab bar5(sf::Vector2f(size), sf::Color::Black, sf::Vector2f(700, 600));
 
-    sf::Text text;
+    sf::Text textTitle;
+    sf::Text textTetris;
     sf::Font font;
-    std::string message = "Retro Runner";
 
     font.loadFromFile("Teko.ttf");
 
+    //Title Text
+    textTitle.setFont(font);
+    textTitle.setString("Retro Runner");
+    textTitle.setCharacterSize(75);
+    textTitle.setFillColor(sf::Color::Cyan);
 
-    text.setFont(font);
+    //Tetris Text
+    textTetris.setFont(font);
+    textTetris.setString("Tetris");
+    textTetris.setCharacterSize(50);
+    textTetris.setFillColor(sf::Color::Cyan);
+    textTitle.setStyle(sf::Text::Bold);
 
-    text.setString(message);
-
-    text.setCharacterSize(75);
-
-    text.setFillColor(sf::Color::Cyan);
-
-    sf::FloatRect textRect = text.getLocalBounds();
-    text.setOrigin(textRect.width / 2, textRect.height / 2);
-    text.setPosition(sf::Vector2f(window.getSize().x / 2.f, window.getSize().y / 11.f));
-
-    text.setStyle(sf::Text::Bold);
-
-    //testing gamepiece
-    //GamePiece piece;
-    
-    //piece.createPiece();
-
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.draw(background);
+    sf::FloatRect textRect = textTitle.getLocalBounds();
+    textTitle.setOrigin(textRect.width / 2, textRect.height / 2);
+    textTitle.setPosition(sf::Vector2f(window.getSize().x / 2.f, window.getSize().y / 11.f));
 
 
-        window.draw(bar);
-        window.draw(bar1);
-        window.draw(bar2);
-        window.draw(bar3);
-        window.draw(bar4);
-        window.draw(bar5);
-        window.draw(text);
+    textTetris.setOrigin(textRect.width / 2, textRect.height / 2);
+    textTetris.setPosition(sf::Vector2f(320, 475));
 
 
-        window.display();
+    window.draw(background);
 
-        
 
-    }
+    window.draw(bar);
+    window.draw(bar1);
+    window.draw(bar2);
+    window.draw(bar3);
+    window.draw(bar4);
+    window.draw(bar5);
+    window.draw(textTitle);
+    window.draw(textTetris);
+
+
+     window.display();
+
+}
+
+void Application::displayStartUpScreen()
+{
     for (int i = 0; i < 100; i+=5)
     {
         cout << endl << endl << endl << endl << endl << endl << endl <<
             endl << endl << endl << endl << endl;
-        //cout << "                                                Starting Application...\n";
-        ////Insert Progress Bar here
-        //cout << "                                                     Loading...";
-        //cout << i << "%";
-        //Sleep(50);
-        //system("cls");
+        cout << "                                                Starting Application...\n";
+        cout << "                                                     Loading...";
+        cout << i << "%";
+        Sleep(10);
+        system("cls");
     }
     system("cls");
 
@@ -147,15 +151,3 @@ void Application::displayClosingScreen()
     system("pause");
     system("cls");
 }
-
-//Vector2i Application::getMouseClick()
-//{
-//    Window window;
-//    Mouse cursor;
-//
-//    while (!cursor.isButtonPressed(cursor.Left));
-//
-//    Vector2i localPosition = cursor.getPosition(window);
-//
-//    return localPosition;
-//}

@@ -15,10 +15,9 @@ public:
 
 private:
 	void runMenu();
-	void displayMenu();
+	void displayMenu(sf::RenderWindow& window);
 	void displayStartUpScreen();
 	void displayClosingScreen();
-	//Vector2i getMouseClick();
 
 	//Tetris mGame1;
 };
