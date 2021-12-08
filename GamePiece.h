@@ -14,16 +14,16 @@
 
 class GamePiece{
 public:
-	void getPieceType();
-	void drawPiece(sf::RenderWindow& window);
+	//void getPieceType();
+	sf::RectangleShape drawPiece(sf::RenderWindow& window);
 	int generateChoice();
 	void getPieceType(int randomNum);
 	//sf::RectangleShape drawPiece(sf::RenderWindow& window);
 	//sf::RectangleShape getShape();
 	//void setShape(sf::RectangleShape& sh);
 	void controlPiece(sf::RenderWindow &window);
-	void movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
-		const sf::Color& newColor, const sf::Vector2f& newPosition, sf::Color& newOutlineColor, float& newOutlineThickness);
+	/*void movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
+		const sf::Color& newColor, const sf::Vector2f& newPosition, sf::Color& newOutlineColor, float& newOutlineThickness);*/
 
 
 private:
