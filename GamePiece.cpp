@@ -62,33 +62,32 @@ void GamePiece::getPieceType(int randomNum) {
 //	this->gamePiece = sh;
 //}
 
-<<<<<<< HEAD
 
 	Rectangle cell(sf::Vector2f(50.f, 50.f), sf::Color::Red, sf::Vector2f(100, 62.5), sf::Color::Green, 0.5);
 	//cell.setPosition(window.getSize().x / 2.0f, window.getSize().y / 2.0f);
 	//cell.setFillColor(sf::Color::Red);
 	//cell.setOutlineColor(sf::Color::Green);
-=======
-sf::RectangleShape GamePiece::drawPiece(sf::RenderWindow& window) {
-	this->pieceDrop = generateChoice();
-	getPieceType(pieceDrop);
-	
-	sf::RectangleShape cube(sf::Vector2f(25.f, 25.f));
-	cube.setFillColor(sf::Color::Red);
-	cube.setOutlineColor(sf::Color::Green);
->>>>>>> 350adc3f7683b892c9cdfbe4cd0df7d1d00c6beb
-	//cell.setOutlineThickness(5);
-	for (Vector2i block : currentPieceType)
-	{
-		cube.setPosition((block.x * 25)+175, block.y * 25);
 
-		//window.draw(cube);
-	}
-	return cube;
-}
+//sf::RectangleShape GamePiece::drawPiece(sf::RenderWindow& window) {
+//	this->pieceDrop = generateChoice();
+//	getPieceType(pieceDrop);
+//	
+//	sf::RectangleShape cube(sf::Vector2f(25.f, 25.f));
+//	cube.setFillColor(sf::Color::Red);
+//	cube.setOutlineColor(sf::Color::Green);
+//
+//	//cell.setOutlineThickness(5);
+//	for (Vector2i block : currentPieceType)
+//	{
+//		cube.setPosition((block.x * 25)+175, block.y * 25);
+//
+//		//window.draw(cube);
+//	}
+//	return cube;
+//}
 
 void GamePiece::controlPiece(sf::RenderWindow &window) {
-	sf::RectangleShape curr = drawPiece(window);
+	sf::RectangleShape curr; //= drawPiece(window);
 	window.draw(curr);
 	for (Vector2i block : currentPieceType)
 	{
@@ -107,8 +106,7 @@ void GamePiece::controlPiece(sf::RenderWindow &window) {
 	//	
 	//}
 }
-<<<<<<< HEAD
-=======
+
 
 void GamePiece::movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
 	const sf::Color& newColor, const sf::Vector2f& newPosition, sf::Color& newOutlineColor, float& newOutlineThickness)
@@ -117,4 +115,4 @@ void GamePiece::movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
 	testRectangle.move(0, 0.01);
 
 }
->>>>>>> 350adc3f7683b892c9cdfbe4cd0df7d1d00c6beb
+
