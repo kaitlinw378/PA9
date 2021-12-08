@@ -44,10 +44,10 @@ void GamePiece::drawPiece(sf::RenderWindow& window) {
 	getPieceType();
 
 
-	sf::RectangleShape cell(sf::Vector2f(50.f, 50.f));
-	cell.setPosition(window.getSize().x / 2.0f, window.getSize().y / 2.0f);
-	cell.setFillColor(sf::Color::Red);
-	cell.setOutlineColor(sf::Color::Green);
+	Rectangle cell(sf::Vector2f(50.f, 50.f), sf::Color::Red, sf::Vector2f(100, 62.5), sf::Color::Green, 0.5);
+	//cell.setPosition(window.getSize().x / 2.0f, window.getSize().y / 2.0f);
+	//cell.setFillColor(sf::Color::Red);
+	//cell.setOutlineColor(sf::Color::Green);
 	//cell.setOutlineThickness(5);
 	for (Vector2i block : currentPieceType)
 	{
@@ -55,11 +55,4 @@ void GamePiece::drawPiece(sf::RenderWindow& window) {
 
 		window.draw(cell);
 	}
-}
-
-void GamePiece::movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
-	const sf::Color& newColor, const sf::Vector2f& newPosition, sf::Color& newOutlineColor, float& newOutlineThickness)
-{
-	Rectangle testRectangle(newSize, newColor, newPosition, newOutlineColor, newOutlineThickness);
-	testRectangle.move(0, 0.01);
 }
