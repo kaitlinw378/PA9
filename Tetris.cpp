@@ -13,23 +13,41 @@ Tetris::~Tetris()
 
 void Tetris::runTetris()
 {
-	runMenu();
+    sf::RenderWindow window(sf::VideoMode(625, 625), "Tetris");
+	runMenu(window);
 }
 
-void Tetris::runMenu()
+void Tetris::runMenu(sf::RenderWindow& window)
 {
-    sf::RenderWindow window(sf::VideoMode(625, 625), "Tetris");
+    Vector2i mousePos;
 
 
 
 
-    int option;
+    int option = 0;
 
-    do {
-        displayMenu();
+        displayMenu(window);
+        while (window.isOpen())
+        {
+            sf::Event event;
+            while (window.pollEvent(event))
+            {
+                if (event.type == sf::Event::Closed)
+                    window.close();
+            }
+            while (!sf::Mouse::isButtonPressed(sf::Mouse::Left));
+
+            mousePos = sf::Mouse::getPosition(window);
+
+            if ((mousePos.x > 90 && mousePos.x < 560) && (mousePos.y > 60 && mousePos.y < 235))
+            {
+                option = 1;
+                window.close();
+            }
+        }
+
+
         //Make option decided by mouse click
-        option = 0;
-        cin >> option;
         switch (option)
         {
         case 1: //Play
@@ -42,17 +60,99 @@ void Tetris::runMenu()
         case 4: //Exit Tetris
             break;
         default: //Invalid Input
-            system("cls");
-            runMenu();
             break;
         }
         system("cls");
-    } while (option != 4);
 }
 
-void Tetris::displayMenu()
+void Tetris::displayMenu(sf::RenderWindow& window)
 {
-    // display menu window with menu options
+    sf::Color backGroundColor(50, 50, 50);
+    Rectangle background(sf::Vector2f(620.f, 620.f), backGroundColor, sf::Vector2f(2.5, 2.5),
+        sf::Color::Cyan, 2.5);
+
+    Rectangle bar(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 175), sf::Color::Cyan, 2.5);
+    Rectangle bar1(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 275), sf::Color::Cyan, 2.5);
+    Rectangle bar2(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 375), sf::Color::Cyan, 2.5);
+    Rectangle bar3(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 475), sf::Color::Cyan, 2.5);
+
+
+    sf::Text textTitle;
+    sf::Text textTetris;
+    sf::Text textHTP;
+    sf::Text textHS;
+    sf::Text textExit;
+    sf::Font font;
+
+    font.loadFromFile("Teko.ttf");
+
+    //Title Text
+    textTitle.setFont(font);
+    textTitle.setString("Tetris");
+    textTitle.setCharacterSize(100);
+    textTitle.setFillColor(sf::Color::Cyan);
+
+    sf::FloatRect textRect = textTitle.getLocalBounds();
+    textTitle.setOrigin(textRect.width / 2, textRect.height / 2);
+    textTitle.setPosition(sf::Vector2f(window.getSize().x / 2.f, window.getSize().y / 11.f));
+
+    //Tetris Text
+    textTetris.setFont(font);
+    textTetris.setString("Play");
+    textTetris.setCharacterSize(45);
+    textTetris.setFillColor(sf::Color::Cyan);
+
+    textRect = textTetris.getLocalBounds();
+    textTetris.setOrigin(textRect.width / 2, textRect.height / 2);
+    textTetris.setPosition(sf::Vector2f(window.getSize().x / 2.f, 190));
+
+    //HTP Text
+    textHTP.setFont(font);
+    textHTP.setString("How to Play");
+    textHTP.setCharacterSize(45);
+    textHTP.setFillColor(sf::Color::Cyan);
+
+    textRect = textHTP.getLocalBounds();
+    textHTP.setOrigin(textRect.width / 2, textRect.height / 2);
+    textHTP.setPosition(sf::Vector2f(window.getSize().x / 2.f, 290));
+
+    //HS Text
+    textHS.setFont(font);
+    textHS.setString("High Scores");
+    textHS.setCharacterSize(45);
+    textHS.setFillColor(sf::Color::Cyan);
+
+    textRect = textHS.getLocalBounds();
+    textHS.setOrigin(textRect.width / 2, textRect.height / 2);
+    textHS.setPosition(sf::Vector2f(window.getSize().x / 2.f, 390));
+    
+    //Exit text
+    textExit.setFont(font);
+    textExit.setString("Exit");
+    textExit.setCharacterSize(45);
+    textExit.setFillColor(sf::Color::Cyan);
+
+    textRect = textExit.getLocalBounds();
+    textExit.setOrigin(textRect.width / 2, textRect.height / 2);
+    textExit.setPosition(sf::Vector2f(window.getSize().x / 2.f, 490));
+
+
+    window.draw(background);
+
+
+    window.draw(bar);
+    window.draw(bar1);
+    window.draw(bar2);
+    window.draw(bar3);
+
+    window.draw(textTitle);
+    window.draw(textTetris);
+    window.draw(textHTP);
+    window.draw(textHS);
+    window.draw(textExit);
+
+
+    window.display();
 }
 
 void Tetris::displayStartUpScreen()

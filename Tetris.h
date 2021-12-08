@@ -21,8 +21,8 @@ public:
 	void runTetris();
 
 private:
-	void runMenu();
-	void displayMenu();
+	void runMenu(sf::RenderWindow& window);
+	void displayMenu(sf::RenderWindow& window);
 	void displayStartUpScreen();
 	void displayClosingScreen();
 	void play();
