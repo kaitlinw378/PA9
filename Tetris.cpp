@@ -173,15 +173,14 @@ void Tetris::play()
 
 
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
-   // sf::RectangleShape background(sf::Vector2f(625.f, 625.f));
+   
     Rectangle background(sf::Vector2f(625, 625), sf::Color(50, 50, 50), sf::Vector2f(0, 0), sf::Color::Cyan, 0);
     Rectangle board(sf::Vector2f(250, 500), sf::Color::Black, sf::Vector2f(100, 87.5), sf::Color::Cyan, 2.5);
-    background.setFillColor(sf::Color(50, 50, 50));
-   
+    Rectangle Hscore(sf::Vector2f(200, 100), sf::Color::Black, sf::Vector2f(387.5, 487.5), sf::Color::Cyan, 2.5);
+    Rectangle nPiece(sf::Vector2f(200., 150.), sf::Color::Black, sf::Vector2f(387.5, 87.5), sf::Color::Cyan, 2.5);
+    Rectangle Cscore(sf::Vector2f(200, 100), sf::Color::Black, sf::Vector2f(387.5, 325), sf::Color::Cyan, 2.5);
 
-    sf::RectangleShape shape2(sf::Vector2f(200.f, 337.5f));
-    shape2.setPosition(387.5f, 250.f);
-    shape2.setFillColor(sf::Color::Black);
+    
 
     sf::Vertex line1[] =
     {
@@ -396,9 +395,10 @@ void Tetris::play()
         }
 
         window.draw(background);
-        //window.draw(shape);
-        window.draw(shape2);
+        window.draw(Hscore);
+        window.draw(Cscore);
         window.draw(board);
+        window.draw(nPiece);
 
         window.draw(line1, 2, sf::Lines);
         window.draw(line2, 2, sf::Lines);
