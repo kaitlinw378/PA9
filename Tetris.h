@@ -28,11 +28,8 @@ private:
 	void displayClosingScreen();
 	void play();
 	void displayGameRules();
-<<<<<<< HEAD
 	void displayScores();
-=======
 	void viewScores();
 	int calculateScore(int& currentLevel, int& numLinesCleared);
->>>>>>> 8372af5f2e83a358804a2b5f1c6d734cb05c1820
 
 };
