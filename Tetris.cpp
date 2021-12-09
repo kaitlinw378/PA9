@@ -492,7 +492,12 @@ void Tetris::displayScores()
     //display scores
 }
 
-int calculateScore(int& currentLevel, int& numLinesCleared)
+void Tetris::viewScores()
+{
+
+}
+
+int Tetris::calculateScore(int& currentLevel, int& numLinesCleared)
 {
     int score = 0;
     if (numLinesCleared == 1)
