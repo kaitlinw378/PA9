@@ -414,7 +414,7 @@ void Tetris::play()
         window.draw(background);
         window.draw(Hscore);
         window.draw(Cscore);
-        //window.draw(board);
+        window.draw(board);
         window.draw(nPiece);
         window.draw(bottom);
 
@@ -490,7 +490,12 @@ void Tetris::displayScores()
     //display scores
 }
 
-int calculateScore(int& currentLevel, int& numLinesCleared)
+void Tetris::viewScores()
+{
+
+}
+
+int Tetris::calculateScore(int& currentLevel, int& numLinesCleared)
 {
     int score = 0;
     if (numLinesCleared == 1)
