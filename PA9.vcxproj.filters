@@ -51,6 +51,12 @@
     <ClCompile Include="tpiece.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Blocks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Piece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="text.txt" />
@@ -101,6 +107,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Rectangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Blocks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Piece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -380,7 +380,7 @@ void Tetris::play()
     text1.setStyle(sf::Text::Bold);
 
     //testing gamepiece
-    GamePiece piece;
+    Piece piece;
     
     //piece.createPiece();
 
@@ -439,7 +439,11 @@ void Tetris::play()
         window.draw(text2);
         window.draw(text3);
         window.draw(text4);
-        piece.controlPiece(window);
+        //piece.controlPiece(window);
+
+        piece.draw(window);
+
+        piece.moveDown(window, bottom);
         
         //<<<<<< < HEAD
         //    //piece.drawPiece(window); //testing piece drawing

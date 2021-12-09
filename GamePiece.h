@@ -26,7 +26,6 @@ public:
 	/*void movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
 		const sf::Color& newColor, const sf::Vector2f& newPosition, sf::Color& newOutlineColor, float& newOutlineThickness);*/
 
-
 private:
 	int pieceDrop = 0;
 	vector<Vector2i> currentPieceType;
