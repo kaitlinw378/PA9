@@ -110,6 +110,7 @@ void GamePiece::controlPiece(sf::RenderWindow &window) {
 	//cube.setOutlineColor(sf::Color::Green);
 
 	//cell.setOutlineThickness(5);
+	//Vector2i pos(block.x * 25) + 175, block.y * 25);
 
 	for (Vector2i block : currentPieceType)
 	{

@@ -27,6 +27,6 @@ private:
 	void displayClosingScreen();
 	void play();
 	void displayGameRules();
-	void viewScores();
+	void displayScores();
 
 };

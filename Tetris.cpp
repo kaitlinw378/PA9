@@ -25,7 +25,8 @@ void Tetris::runMenu(sf::RenderWindow& window)
 
 
     int option = 0;
-
+    do {
+        option = 0;
         displayMenu(window);
         while (window.isOpen())
         {
@@ -39,13 +40,27 @@ void Tetris::runMenu(sf::RenderWindow& window)
 
             mousePos = sf::Mouse::getPosition(window);
 
-            if ((mousePos.x > 90 && mousePos.x < 560) && (mousePos.y > 60 && mousePos.y < 235))
+            if ((mousePos.x > 90 && mousePos.x < 560) && (mousePos.y > 175 && mousePos.y < 235))
             {
                 option = 1;
                 window.close();
             }
+            if ((mousePos.x > 90 && mousePos.x < 560) && (mousePos.y > 275 && mousePos.y < 325))
+            {
+                option = 2;
+                window.close();
+            }
+            if ((mousePos.x > 90 && mousePos.x < 560) && (mousePos.y > 375 && mousePos.y < 425))
+            {
+                option = 2;
+                window.close();
+            }
+            if ((mousePos.x > 90 && mousePos.x < 560) && (mousePos.y > 475 && mousePos.y < 525))
+            {
+                option = 3;
+                window.close();
+            }
         }
-
 
         //Make option decided by mouse click
         switch (option)
@@ -54,8 +69,10 @@ void Tetris::runMenu(sf::RenderWindow& window)
             play();
             break;
         case 2: //Game Rules
+            displayGameRules();
             break;
         case 3: //Highscores
+            displayScores();
             break;
         case 4: //Exit Tetris
             break;
@@ -63,19 +80,22 @@ void Tetris::runMenu(sf::RenderWindow& window)
             break;
         }
         system("cls");
+    } while (option != 3);
 }
 
 void Tetris::displayMenu(sf::RenderWindow& window)
 {
-    sf::Color backGroundColor(50, 50, 50);
+
+    sf::Color base = sf::Color::Cyan;
+    sf::Color backGroundColor(25, 25, 25);
     Rectangle background(sf::Vector2f(620.f, 620.f), backGroundColor, sf::Vector2f(2.5, 2.5),
-        sf::Color::Cyan, 2.5);
+        base, 2.5);
 
-    Rectangle bar(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 175), sf::Color::Cyan, 2.5);
-    Rectangle bar1(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 275), sf::Color::Cyan, 2.5);
-    Rectangle bar2(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 375), sf::Color::Cyan, 2.5);
-    Rectangle bar3(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 475), sf::Color::Cyan, 2.5);
-
+    Rectangle bar(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 175), base, 2.5);
+    Rectangle bar1(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 275), base, 2.5);
+    Rectangle bar2(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 375), base, 2.5);
+    Rectangle bar3(sf::Vector2f(450, 60), sf::Color::Black, sf::Vector2f(90, 475), base, 2.5);
+    //Rectangle bar4(sf::Vector2f(250, 0.1), base, sf::Vector2f(200, 125), base, 2.5);
 
     sf::Text textTitle;
     sf::Text textTetris;
@@ -90,7 +110,7 @@ void Tetris::displayMenu(sf::RenderWindow& window)
     textTitle.setFont(font);
     textTitle.setString("Tetris");
     textTitle.setCharacterSize(100);
-    textTitle.setFillColor(sf::Color::Cyan);
+    textTitle.setFillColor(base);
 
     sf::FloatRect textRect = textTitle.getLocalBounds();
     textTitle.setOrigin(textRect.width / 2, textRect.height / 2);
@@ -100,7 +120,7 @@ void Tetris::displayMenu(sf::RenderWindow& window)
     textTetris.setFont(font);
     textTetris.setString("Play");
     textTetris.setCharacterSize(45);
-    textTetris.setFillColor(sf::Color::Cyan);
+    textTetris.setFillColor(base);
 
     textRect = textTetris.getLocalBounds();
     textTetris.setOrigin(textRect.width / 2, textRect.height / 2);
@@ -110,7 +130,7 @@ void Tetris::displayMenu(sf::RenderWindow& window)
     textHTP.setFont(font);
     textHTP.setString("How to Play");
     textHTP.setCharacterSize(45);
-    textHTP.setFillColor(sf::Color::Cyan);
+    textHTP.setFillColor(base);
 
     textRect = textHTP.getLocalBounds();
     textHTP.setOrigin(textRect.width / 2, textRect.height / 2);
@@ -120,7 +140,7 @@ void Tetris::displayMenu(sf::RenderWindow& window)
     textHS.setFont(font);
     textHS.setString("High Scores");
     textHS.setCharacterSize(45);
-    textHS.setFillColor(sf::Color::Cyan);
+    textHS.setFillColor(base);
 
     textRect = textHS.getLocalBounds();
     textHS.setOrigin(textRect.width / 2, textRect.height / 2);
@@ -130,7 +150,7 @@ void Tetris::displayMenu(sf::RenderWindow& window)
     textExit.setFont(font);
     textExit.setString("Exit");
     textExit.setCharacterSize(45);
-    textExit.setFillColor(sf::Color::Cyan);
+    textExit.setFillColor(base);
 
     textRect = textExit.getLocalBounds();
     textExit.setOrigin(textRect.width / 2, textRect.height / 2);
@@ -139,18 +159,17 @@ void Tetris::displayMenu(sf::RenderWindow& window)
 
     window.draw(background);
 
-
     window.draw(bar);
     window.draw(bar1);
     window.draw(bar2);
     window.draw(bar3);
+    //window.draw(bar4);
 
     window.draw(textTitle);
     window.draw(textTetris);
     window.draw(textHTP);
     window.draw(textHS);
     window.draw(textExit);
-
 
     window.display();
 }
@@ -458,7 +477,7 @@ void Tetris::displayGameRules()
     //Displays game rules
 }
 
-void Tetris::viewScores()
+void Tetris::displayScores()
 {
     //View highscores
 
