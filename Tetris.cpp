@@ -416,7 +416,7 @@ void Tetris::play()
         window.draw(background);
         window.draw(Hscore);
         window.draw(Cscore);
-        //window.draw(board);
+        window.draw(board);
         window.draw(nPiece);
         window.draw(bottom);
 
