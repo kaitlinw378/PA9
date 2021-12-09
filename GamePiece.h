@@ -31,7 +31,8 @@ private:
 	int pieceDrop = 0;
 	vector<Vector2i> currentPieceType;
 	vector<Vector2i> nextPieceType;
-	
+	int x_pos = 1;
+	int y_pos = 0;
 
 	Ipiece ipiece;
 	Opiece opiece;

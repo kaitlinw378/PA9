@@ -9,6 +9,7 @@ int GamePiece::generateChoice() {
 }
 
 void GamePiece::getPieceType(int randomNum) {
+
 	//generate random number between 1 and 7 for each piece type
 	//use switch to create that type?
 	//return piece type
@@ -25,7 +26,7 @@ void GamePiece::getPieceType(int randomNum) {
 	switch (randomNum) {
 	case 1:
 		//i-shape
-		currentPieceType = ipiece.createIPiece();
+		currentPieceType = ipiece.createIPiece(x_pos, y_pos);
 		break;
 	case 2:
 		//o-shape
@@ -117,6 +118,8 @@ void GamePiece::controlPiece(sf::RenderWindow &window) {
 	{
 		cube.setPosition((block.x * 25) + 175, block.y * 25);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+			y_pos++;
+			currentPieceType = ipiece.createIPiece(x_pos, y_pos);
 			//block.y += 1;
 			cube.move(0, 25);
 			//timeDelay();
