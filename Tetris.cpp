@@ -412,8 +412,6 @@ void Tetris::play()
                 window.close();
         }
 
-        
-        
         window.draw(bottom);
         window.draw(left);
         window.draw(right);
@@ -422,8 +420,6 @@ void Tetris::play()
         window.draw(Cscore);
         window.draw(board);
         window.draw(nPiece);
-        
-
 
         window.draw(line1, 2, sf::Lines);
         window.draw(line2, 2, sf::Lines);
