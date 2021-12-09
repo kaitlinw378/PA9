@@ -189,8 +189,6 @@ void Tetris::play()
     //Plays the game of tetris
     sf::RenderWindow window(sf::VideoMode(625, 625), "Tetris");
 
-
-
     sf::Vector2f size(window.getSize().x / 2.78, window.getSize().y / 20);
    
     Rectangle background(sf::Vector2f(625, 625), sf::Color(50, 50, 50), sf::Vector2f(0, 0), sf::Color::Cyan, 0);
