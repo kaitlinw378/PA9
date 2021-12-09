@@ -111,6 +111,8 @@ void GamePiece::controlPiece(sf::RenderWindow &window) {
 
 	//cell.setOutlineThickness(5);
 
+
+	
 	for (Vector2i block : currentPieceType)
 	{
 		cube.setPosition((block.x * 25) + 175, block.y * 25);
@@ -118,7 +120,6 @@ void GamePiece::controlPiece(sf::RenderWindow &window) {
 			//block.y += 1;
 			cube.move(0, 25);
 			//timeDelay();
-			
 		}
 		//controlPiece(window);
 		//cube.setPosition((block.x * 25) + 175, block.y * 25);
@@ -127,8 +128,17 @@ void GamePiece::controlPiece(sf::RenderWindow &window) {
 		}*/
 		//cube.move(0, 25);
 		window.draw(cube);
-		
 	}
+
+	//for (Vector2i block : currentPieceType)
+	//{
+	//	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+	//		//block.y += 1;
+	//		cube.move(0, 25);
+	//		//timeDelay();
+	//	}
+	//}
+	
 	//window.draw(curr);
 
 	//for (Vector2i block : currentPieceType)
