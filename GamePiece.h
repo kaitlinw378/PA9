@@ -26,12 +26,12 @@ public:
 	/*void movePiece(sf::RenderWindow& window, const sf::Vector2f& newSize,
 		const sf::Color& newColor, const sf::Vector2f& newPosition, sf::Color& newOutlineColor, float& newOutlineThickness);*/
 
-
 private:
 	int pieceDrop = 0;
 	vector<Vector2i> currentPieceType;
 	vector<Vector2i> nextPieceType;
-	
+	int x_pos = 1;
+	int y_pos = 0;
 
 	Ipiece ipiece;
 	Opiece opiece;

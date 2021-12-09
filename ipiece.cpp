@@ -1,9 +1,9 @@
 #include "ipiece.h"
 
-vector<Vector2i> Ipiece::createIPiece() {
-	s1.push_back(sf::Vector2i{ 1,0 });
-	s1.push_back(sf::Vector2i{ 1,1 });
-	s1.push_back(sf::Vector2i{ 1,2 });
-	s1.push_back(sf::Vector2i{ 1,3 });
+vector<Vector2i> Ipiece::createIPiece(int& x, int& y) {
+	s1.push_back(sf::Vector2i{ x,y });
+	s1.push_back(sf::Vector2i{ x,(y+1) });
+	s1.push_back(sf::Vector2i{ x, (y+2)});
+	s1.push_back(sf::Vector2i{ x, (y+3) });
 	return s1;
 }
