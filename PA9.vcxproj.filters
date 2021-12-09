@@ -120,4 +120,12 @@
     <Font Include="Anton.ttf" />
     <Font Include="Teko.ttf" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Pictures\Saved Pictures\TetrisControls.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\Pictures\Saved Pictures\TetrisRules.png">
+      <Filter>Source Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

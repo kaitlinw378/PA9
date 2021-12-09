@@ -197,7 +197,8 @@ void Tetris::play()
     Rectangle nPiece(sf::Vector2f(200., 150.), sf::Color::Black, sf::Vector2f(387.5, 87.5), sf::Color::Cyan, 2.5);
     Rectangle Cscore(sf::Vector2f(200, 100), sf::Color::Black, sf::Vector2f(387.5, 325), sf::Color::Cyan, 2.5);
     Rectangle bottom(sf::Vector2f(250, 5), sf::Color::Black, sf::Vector2f(100, 587.5), sf::Color::Cyan, 0);
-    
+    Rectangle left(sf::Vector2f(5, 500), sf::Color::Black, sf::Vector2f(95, 87.5), sf::Color::Cyan, 0);
+    Rectangle right(sf::Vector2f(5, 500), sf::Color::Black, sf::Vector2f(350, 87.5), sf::Color::Cyan, 0);
 
     sf::Vertex line1[] =
     {
@@ -411,12 +412,18 @@ void Tetris::play()
                 window.close();
         }
 
+        
+        
+        window.draw(bottom);
+        window.draw(left);
+        window.draw(right);
         window.draw(background);
         window.draw(Hscore);
         window.draw(Cscore);
         window.draw(board);
         window.draw(nPiece);
-        window.draw(bottom);
+        
+
 
         window.draw(line1, 2, sf::Lines);
         window.draw(line2, 2, sf::Lines);
