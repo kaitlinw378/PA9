@@ -7,6 +7,10 @@ void test::testApplicationLoadingPercentage()
 	{
 		cout << "The result matched expected result" << endl;
 	}
+	else
+	{
+		cout << "!!!!!!!Test Failed!!!!!!" << endl;
+	}
 }
 
 void test::testApplicationDisplayMenu()
@@ -16,7 +20,10 @@ void test::testApplicationDisplayMenu()
 	{
 		cout << "The result matched expected result" << endl;
 	}
-	
+	else
+	{
+		cout << "!!!!!!!Test Failed!!!!!!" << endl;
+	}
 }
 
 void test::testTetrisDisplayMenu()
@@ -26,15 +33,41 @@ void test::testTetrisDisplayMenu()
 	{
 		cout << "The result matched expected result" << endl;
 	}
+	else
+	{
+		cout << "!!!!!!!Test Failed!!!!!!" << endl;
+	}
 }
 
-void test::testScoreFunction()
+void test::testScoreDisplay()
 {
+<<<<<<< HEAD
 	
+=======
+	Tetris run;
+	if (run.display() == true)
+	{
+		cout << "The result matched expected result" << endl;
+	}
+	else
+	{
+		cout << "!!!!!!!Test Failed!!!!!!" << endl;
+	}
+>>>>>>> c29dc91977ddf2aec10d0e496c9e205a39478d17
 }
 
-void test::testsomethin()
+void test::testCalculateScore()
 {
-
-	
+	Tetris run;
+	int score1 = 50, score2 = 0, level = 2, numCleared = 3;
+	run.getScore(score1, level, numCleared);
+	score2 = 50 + 400 + (400 * level);
+	if (score1 == score2)
+	{
+		cout << "The result matched expected result" << endl;
+	}
+	else
+	{
+		cout << "!!!!!!!Test Failed!!!!!!" << endl;
+	}
 }
