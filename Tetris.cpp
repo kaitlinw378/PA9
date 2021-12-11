@@ -86,7 +86,7 @@ void Tetris::runMenu()
 void Tetris::displayMenu(sf::RenderWindow& window)
 {
 
-    sf::Color base = sf::Color::Cyan;
+    sf::Color base = sf::Color::Magenta;
     sf::Color backGroundColor(25, 25, 25);
     Rectangle background(sf::Vector2f(620.f, 620.f), backGroundColor, sf::Vector2f(2.5, 2.5),
         base, 2.5);
@@ -481,7 +481,68 @@ void Tetris::play()
 
 void Tetris::displayGameRules()
 {
-    //Displays game rules
+    sf::RenderWindow window(sf::VideoMode(625, 625), "How to Play");
+    Vector2i mousePos;
+    sf::Color base = sf::Color::Magenta;
+    sf::Color backGroundColor(25, 25, 25);
+    Rectangle background(sf::Vector2f(620.f, 620.f), backGroundColor, sf::Vector2f(2.5, 2.5),
+        base, 2.5);
+
+    sf::Font font;
+    font.loadFromFile("Teko.ttf");
+    sf::Text tExit;
+    sf::Text textTitle;
+    sf::Text tControls;
+    
+    std::string Controls;
+
+
+
+    //Title Text
+    textTitle.setFont(font);
+    textTitle.setString("How To Play");
+    textTitle.setCharacterSize(100);
+    textTitle.setFillColor(base);
+
+    sf::FloatRect textRect = textTitle.getLocalBounds();
+    textTitle.setOrigin(textRect.width / 2, textRect.height / 2);
+    textTitle.setPosition(sf::Vector2f(window.getSize().x / 2.f, window.getSize().y / 11.f));
+
+    //Exit Text
+    tExit.setFont(font);
+    tExit.setString("Exit");
+    tExit.setCharacterSize(50);
+    tExit.setFillColor(base);
+
+    textRect = tExit.getLocalBounds();
+    tExit.setOrigin(textRect.width / 2, textRect.height / 2);
+    tExit.setPosition(sf::Vector2f(550, 525));
+
+
+    window.draw(background);
+
+
+    window.draw(textTitle);
+    window.draw(tExit);
+    window.display();
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+        while (!sf::Mouse::isButtonPressed(sf::Mouse::Left));
+
+        mousePos = sf::Mouse::getPosition(window);
+
+        if ((mousePos.x > 500 && mousePos.x < 625) && (mousePos.y > 500 && mousePos.y < 625))
+        {
+            window.close();
+        }
+    }
 }
 
 void Tetris::displayScores()
@@ -491,7 +552,7 @@ void Tetris::displayScores()
 
     sf::RenderWindow window(sf::VideoMode(625, 625), "High Scores");
     Vector2i mousePos;
-    sf::Color base = sf::Color::Cyan;
+    sf::Color base = sf::Color::Magenta;
     sf::Color backGroundColor(25, 25, 25);
     Rectangle background(sf::Vector2f(620.f, 620.f), backGroundColor, sf::Vector2f(2.5, 2.5),
         base, 2.5);
@@ -503,6 +564,7 @@ void Tetris::displayScores()
     sf::Text tScore1;
     sf::Text tScore2;
     sf::Text tScore3;
+    sf::Text tExit;
 
     std::string sScore1 = "1.  ";
     std::string sScore2 = "2.  ";
@@ -573,12 +635,23 @@ void Tetris::displayScores()
     tScore3.setOrigin(100, textRect.height / 2);
     tScore3.setPosition(sf::Vector2f(window.getSize().x / 2.f, 400));
 
+    //Exit Text
+    tExit.setFont(font);
+    tExit.setString("Exit");
+    tExit.setCharacterSize(50);
+    tExit.setFillColor(base);
+
+    textRect = tExit.getLocalBounds();
+    tExit.setOrigin(textRect.width / 2, textRect.height / 2);
+    tExit.setPosition(sf::Vector2f(550, 525));
+
 
     window.draw(background);
     window.draw(textTitle);
     window.draw(tScore1);
     window.draw(tScore2);
     window.draw(tScore3);
+    window.draw(tExit);
     window.display();
 
     while (window.isOpen())
@@ -593,7 +666,7 @@ void Tetris::displayScores()
 
         mousePos = sf::Mouse::getPosition(window);
 
-        if ((mousePos.x > 90 && mousePos.x < 560) && (mousePos.y > 175 && mousePos.y < 235))
+        if ((mousePos.x > 500 && mousePos.x < 625) && (mousePos.y > 500 && mousePos.y < 625))
         {
             window.close();
         }
