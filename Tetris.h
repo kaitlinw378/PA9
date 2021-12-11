@@ -34,6 +34,7 @@ private:
 	void displayGameRules();
 	void displayScores();
 	void viewScores();
-	int calculateScore(int& currentLevel, int& numLinesCleared);
+	void addLineScore(int& score, int& currentLevel, int& numLinesCleared);
+	void addStaticScore(int& score, int& currentLevel);
 
 };
