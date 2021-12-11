@@ -18,6 +18,7 @@
 #include "Tetris.h"
 #include <Windows.h>
 #include "Rectangle.h"
+#include "Tab.h"
 
 class Application
 {

@@ -27,7 +27,7 @@ caused too much to be happening all at once and it became difficult to fix error
 - Decided to use arrays for the pieces instead, essentially starting over again 
 - Arrays worked much better and pieces did not dissapear 
 - Were able to get pieces to move and rotate with key controls and fall down the screen incrementally with a timer
-- Were not able to implement new object creation so game does not add more pieces. 
+- Were not able to implement new object creation at runtime (dynamic memory) so game does not add more pieces. 
 - Finalized game interface 
 - Wrote test cases 
 - Made video
