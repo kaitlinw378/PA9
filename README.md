@@ -4,6 +4,8 @@ Caleb Peterson - Lab Section 1
 Kaitlin White - Lab Section 6
 Grant Erickson - Lab Section 23
 
+Project video link: https://youtu.be/E6-rQO4e3ts 
+
 From 11-29 to 12-3 we tried to use gitlab but had lots of issues.
 It took multiple hours just to get our ssh keys to work and connect.
 Then everytime we tried to push or pull something multiple errors would show up
