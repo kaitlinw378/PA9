@@ -182,7 +182,7 @@ int Tetris::displayMenu(sf::RenderWindow& window)
     window.draw(textExit);
 
     window.display();
-    int result = 1;
+    result = 1;
     return result;
 }
 
@@ -695,9 +695,8 @@ void Tetris::viewScores()
 
 }
 
-int Tetris::calculateScore(int& currentLevel, int& numLinesCleared)
+void Tetris::addLineScore(int& score, int& currentLevel, int& numLinesCleared)
 {
-    int score = 0;
     if (numLinesCleared == 1)
     {
         score = score + 40 + (40 * currentLevel);
@@ -714,9 +713,9 @@ int Tetris::calculateScore(int& currentLevel, int& numLinesCleared)
     {
         score = score + 1200 + (1200 * currentLevel);
     }
-    else
-    {
-        score;
-    }
-    return score;
+}
+
+void Tetris::addStaticScore(int& score, int& currentLevel)
+{
+    score = score + 10 + (10 * currentLevel);
 }
