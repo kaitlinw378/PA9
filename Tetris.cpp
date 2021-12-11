@@ -32,6 +32,7 @@ int Tetris::runMenu()
             while (window.pollEvent(event))
             {
                 if (event.type == sf::Event::Closed)
+                    option = 4;
                     window.close();
             }
             while (!sf::Mouse::isButtonPressed(sf::Mouse::Left));
