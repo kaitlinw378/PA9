@@ -410,6 +410,12 @@ void Tetris::play()
     
     //piece.createPiece();
 
+    //Player Score
+    int score = 0;
+    
+    //Current Level
+    int currentLevel;
+
     while (window.isOpen())
     {
 
@@ -461,9 +467,9 @@ void Tetris::play()
         window.draw(line29, 2, sf::Lines);
         window.draw(line30, 2, sf::Lines);
 
-
-        
-        displayHishScore(window);  //Displays High Scores
+        addStaticScore(score, currentLevel); //Update static scores
+        displayPlayerScore(window, score); //Displays current score
+        displayHighScore(window);  //Displays High Scores
 
         //window.draw(bar);
 
@@ -742,7 +748,7 @@ int Tetris::displayScores()
     return result;
 }
 
-void Tetris::displayHishScore(sf::RenderWindow& window)
+void Tetris::displayHighScore(sf::RenderWindow& window)
 {
     fstream infile;
     infile.open("HighScores.txt", std::ios::in);
@@ -771,6 +777,31 @@ void Tetris::displayHishScore(sf::RenderWindow& window)
 
     window.draw(tOutput);
 
+}
+
+void Tetris::displayPlayerScore(sf::RenderWindow& window, int& score)
+{
+    std::stringstream ss;
+    std::string output;
+
+    sf::Font font;
+    font.loadFromFile("Teko.ttf");
+
+    sf::Text tOutput;
+
+    ss << score;
+    ss >> output;
+
+    tOutput.setFont(font);
+    tOutput.setString(output);
+    tOutput.setCharacterSize(40);
+    tOutput.setFillColor(sf::Color::White);
+
+    sf::FloatRect textRect = tOutput.getLocalBounds();
+    tOutput.setOrigin(textRect.width / 2, textRect.height / 2);
+    tOutput.setPosition(sf::Vector2f(487.5, 355.5));
+
+    window.draw(tOutput);
 }
 
 int Tetris::getScore(int& score, int& currentLevel, int& numLinesCleared)
