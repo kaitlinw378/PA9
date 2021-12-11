@@ -1,6 +1,6 @@
 #pragma once
 
-#include "blocks.h"
+#include "Blocks.h"
 #include "Rectangle.h"
 
 #include <SFML/Graphics.hpp>
@@ -14,20 +14,16 @@ using std::vector;
 
 class Piece {
 private:
-
-
-	//int pieceType;
-	//vector<Vector2i> pieceV;
 	Blocks blocks[4];
-	//int pieceType;
 	int x_pos = 200;
 	int y_pos = 0;
-	//int x = 1, y = 0;
+	Vector2f boundsCord;
+	bool timeLoop = false;
+	int rotateRight = 4;
 public:
 	Piece();
-	Vector2f getLowestXCord();
-	bool timeLoop = false;
-	int rotateRight = 0;
+	Vector2f getLowestCord(int& r);
+	//Vector2f getBoundCord(Vector2f& v);
 	void timeDelay(bool& t);
 	void resetTimeLoop(bool& t);
 	int getXpos(Blocks& block);
@@ -37,16 +33,6 @@ public:
 	void updateCoords(Blocks& block);
 	void draw(sf::RenderWindow& window);
 	void moveDown(sf::RenderWindow& window, Rectangle& rect);
-	void pieceFall(int& r, sf::RenderWindow& window);
+	void pieceFall(sf::RenderWindow& window);
 	void rotatePieceRight(int& r);
-	//void drawFirst(sf::RenderWindow& window);
-	//Piece(int pT);
-	//
-	//bool move_down(sf::RenderWindow& window);
-	//int get_shape();
-	////void update_matrix(std::vector<std::vector<int>>& i_matrix);
-	//vector<Vector2i> get_minos();
-	//vector<Vector2i> updateYCords();
-	//vector<Vector2i> getBlockInfo(int x_pos, int y_pos);
-	//void pieceControl();
 };
