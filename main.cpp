@@ -2,6 +2,7 @@
 
 #include "Application.h"
 #include "ProgressBar.h"
+#include "test.h"
 
 #include <string>
 #include <iostream>
@@ -13,6 +14,9 @@ int main() {
 
 	Application obj;
 	obj.runApplication();
+
+	//test t;
+	//t.testApplicationLoadingPercentage();
 
 	return 0;
 }

@@ -10,8 +10,8 @@
 class test
 {
 public:
-	test();
-	~test();
+		//test();
+		//~test();
 
 	void testApplicationLoadingPercentage();
 	void testApplicationDisplayMenu();

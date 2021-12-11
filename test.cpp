@@ -3,7 +3,8 @@
 void test::testApplicationLoadingPercentage()
 {
 	Application run;
-	if (run.checkDisplayStartUp() == true) 
+	bool startup = run.checkDisplayStartUp();
+	if (startup == true) 
 	{
 		cout << "The result matched expected result" << endl;
 	}
@@ -11,6 +12,7 @@ void test::testApplicationLoadingPercentage()
 	{
 		cout << "!!!!!!!Test Failed!!!!!!" << endl;
 	}
+	system("pause");
 }
 
 void test::testApplicationDisplayMenu()
@@ -24,6 +26,7 @@ void test::testApplicationDisplayMenu()
 	{
 		cout << "!!!!!!!Test Failed!!!!!!" << endl;
 	}
+	system("pause");
 }
 
 void test::testTetrisDisplayMenu()
@@ -37,6 +40,7 @@ void test::testTetrisDisplayMenu()
 	{
 		cout << "!!!!!!!Test Failed!!!!!!" << endl;
 	}
+	system("pause");
 }
 
 void test::testScoreDisplay()
@@ -50,6 +54,7 @@ void test::testScoreDisplay()
 	{
 		cout << "!!!!!!!Test Failed!!!!!!" << endl;
 	}
+	system("pause");
 }
 
 void test::testCalculateScore()
@@ -66,4 +71,5 @@ void test::testCalculateScore()
 	{
 		cout << "!!!!!!!Test Failed!!!!!!" << endl;
 	}
+	system("pause");
 }
