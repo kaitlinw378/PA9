@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
-//#include "GamePiece.h"
 #include "piece.h"
 #include <fstream>
 #include <string.h>
@@ -21,8 +20,8 @@ using std::endl;
 class Tetris
 {
 public:
-	Tetris();
-	~Tetris();
+	Tetris() {}
+	~Tetris() {}
 	bool runTetris();
 	bool display();
 	int getScore(int& score, int& currentLevel, int& numLinesCleared);
@@ -30,8 +29,6 @@ public:
 private:
 	int runMenu();
 	int displayMenu(sf::RenderWindow& window);
-	void displayStartUpScreen();
-	void displayClosingScreen();
 	void play();
 	void displayGameRules();
 	int displayScores();
@@ -39,5 +36,4 @@ private:
 	void displayPlayerScore(sf::RenderWindow& window, int& score);
 	void addLineScore(int& score, int& currentLevel, int& numLinesCleared);
 	void addStaticScore(int& score, int& currentLevel);
-
 };

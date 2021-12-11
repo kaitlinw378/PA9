@@ -12,12 +12,13 @@ using std::endl;
 
 int main() {
 
-	Application obj;
-	obj.runApplication();
+	/*Application obj;
+	obj.runApplication();*/
 
 
 	//For Testing Purposes: Please run each test case separately and comment the others out
-	test t;
+	//test t;
+	// 
 	// Test 1
 	//t.testApplicationLoadingPercentage();
 	// Test 2

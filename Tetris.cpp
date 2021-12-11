@@ -1,15 +1,6 @@
 #include "Tetris.h"
 #include "Rectangle.h"
 
-Tetris::Tetris()
-{
-	displayStartUpScreen();
-}
-
-Tetris::~Tetris()
-{
-	displayClosingScreen();
-}
 
 bool Tetris::runTetris()
 {
@@ -180,16 +171,6 @@ int Tetris::displayMenu(sf::RenderWindow& window)
     window.display();
     result = 1;
     return result;
-}
-
-void Tetris::displayStartUpScreen()
-{
-
-}
-
-void Tetris::displayClosingScreen()
-{
-
 }
 
 void Tetris::play()

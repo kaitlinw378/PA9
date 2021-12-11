@@ -2,7 +2,8 @@
 
 void test::testApplicationLoadingPercentage()
 {
-	Application run;
+	int test = 0;
+	Application run(test);
 	bool startup = run.checkDisplayStartUp();
 	if (startup == true) 
 	{
@@ -17,7 +18,8 @@ void test::testApplicationLoadingPercentage()
 
 void test::testApplicationDisplayMenu()
 {
-	Application run;
+	int test = 0;
+	Application run(test);
 	if (run.runApplication() == true)
 	{
 		cout << "The result matched expected result" << endl;
@@ -72,4 +74,21 @@ void test::testCalculateScore()
 		cout << "!!!!!!!Test Failed!!!!!!" << endl;
 	}
 	system("pause");
+}
+
+void test::testCheckPositions() {
+	int num = 2;
+	Piece piece(num);
+
+	Vector2f vec(250, 25), res;
+	piece.setBlocksPosition(num, vec);
+
+	res = piece.getBlocksPosition(num);
+	if (res.x == vec.x && res.y == vec.y) {
+		cout << "test pass" << endl;
+	}
+	else {
+		cout << "fail pass" << endl;
+	}
+
 }
