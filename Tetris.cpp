@@ -505,10 +505,10 @@ void Tetris::displayGameRules()
     sf::Text tExit;
     sf::Text textTitle;
     sf::Text tControls;
-    
-    std::string Controls;
-
-
+    sf::Text tUp;
+    sf::Text tLeft;
+    sf::Text tRight;
+    sf::Text tDown;
 
     //Title Text
     textTitle.setFont(font);
@@ -519,6 +519,46 @@ void Tetris::displayGameRules()
     sf::FloatRect textRect = textTitle.getLocalBounds();
     textTitle.setOrigin(textRect.width / 2, textRect.height / 2);
     textTitle.setPosition(sf::Vector2f(window.getSize().x / 2.f, window.getSize().y / 11.f));
+
+    //Up Text
+    tUp.setFont(font);
+    tUp.setString("Up Arrow: rotates the current piece right");
+    tUp.setCharacterSize(40);
+    tUp.setFillColor(base);
+
+    textRect = tUp.getLocalBounds();
+    tUp.setOrigin(textRect.width / 2, textRect.height / 2);
+    tUp.setPosition(sf::Vector2f(window.getSize().x / 2.f, 175));
+
+    //Left Text
+    tLeft.setFont(font);
+    tLeft.setString("Left Arrow: moves the current piece left");
+    tLeft.setCharacterSize(40);
+    tLeft.setFillColor(base);
+
+    textRect = tLeft.getLocalBounds();
+    tLeft.setOrigin(textRect.width / 2, textRect.height / 2);
+    tLeft.setPosition(sf::Vector2f(window.getSize().x/ 2.f, 250));
+
+    //Right Text
+    tRight.setFont(font);
+    tRight.setString("Right Arrow: moves the current piece right");
+    tRight.setCharacterSize(40);
+    tRight.setFillColor(base);
+
+    textRect = tRight.getLocalBounds();
+    tRight.setOrigin(textRect.width / 2, textRect.height / 2);
+    tRight.setPosition(sf::Vector2f(window.getSize().x/ 2.f, 325));
+
+    //Down Text
+    tDown.setFont(font);
+    tDown.setString("Down Arrow: moves the current piece down");
+    tDown.setCharacterSize(40);
+    tDown.setFillColor(base);
+
+    textRect = tDown.getLocalBounds();
+    tDown.setOrigin(textRect.width / 2, textRect.height / 2);
+    tDown.setPosition(sf::Vector2f(window.getSize().x / 2.f, 400));
 
     //Exit Text
     tExit.setFont(font);
@@ -533,7 +573,10 @@ void Tetris::displayGameRules()
 
     window.draw(background);
 
-
+    window.draw(tUp);
+    window.draw(tLeft);
+    window.draw(tRight);
+    window.draw(tDown);
     window.draw(textTitle);
     window.draw(tExit);
     window.display();
