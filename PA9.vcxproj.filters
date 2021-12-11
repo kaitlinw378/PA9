@@ -24,12 +24,6 @@
     <ClCompile Include="Tetris.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProgressBar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="spiece.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Blocks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -56,12 +50,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tetris.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ProgressBar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">

@@ -37,6 +37,16 @@ Final Notes:
 -We had 14 files that were removed from our program at the end of classes and inheritance attempts for the piece blocks
 but they were accidentally permanently deleted instead of just temporarily removed from the project.
 
+Here is an example of our first attempt at implementing a piece: 
+vector<Vector2i> Spiece::createSPiece() {
+	pieceVect.push_back(sf::Vector2i{ 2,0 });
+	pieceVect.push_back(sf::Vector2i{ 3,0 });
+	pieceVect.push_back(sf::Vector2i{ 1,1 });
+	pieceVect.push_back(sf::Vector2i{ 2,1 });
+
+	return pieceVect;
+}
+
 As a group, we decided to make the game of Tetris because we wanted to make a platform of classic style games to choose.
 Tetris was much more difficult to implement than we originally expected and ran into many problems that either postponed
 our progress or restarted it altogether. Creating many objects and keeping track of all of their collisions and status 

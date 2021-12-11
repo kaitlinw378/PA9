@@ -157,8 +157,6 @@
     <ClCompile Include="Blocks.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Piece.cpp" />
-    <ClCompile Include="ProgressBar.cpp" />
-    <ClCompile Include="spiece.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="Tetris.cpp" />
   </ItemGroup>
@@ -173,10 +171,8 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="Blocks.h" />
     <ClInclude Include="Piece.h" />
-    <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Tab.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="Tetris.h" />
   </ItemGroup>
