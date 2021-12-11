@@ -92,7 +92,7 @@ int Tetris::displayMenu(sf::RenderWindow& window)
 {
     int result = 0;
 
-    sf::Color base = sf::Color::Magenta;
+    sf::Color base = sf::Color::Cyan;
     sf::Color backGroundColor(25, 25, 25);
     Rectangle background(sf::Vector2f(620.f, 620.f), backGroundColor, sf::Vector2f(2.5, 2.5),
         base, 2.5);
@@ -501,7 +501,7 @@ void Tetris::displayGameRules()
 {
     sf::RenderWindow window(sf::VideoMode(625, 625), "How to Play");
     Vector2i mousePos;
-    sf::Color base = sf::Color::Magenta;
+    sf::Color base = sf::Color::Cyan;
     sf::Color backGroundColor(25, 25, 25);
     Rectangle background(sf::Vector2f(620.f, 620.f), backGroundColor, sf::Vector2f(2.5, 2.5),
         base, 2.5);
@@ -624,7 +624,7 @@ int Tetris::displayScores()
 
     sf::RenderWindow window(sf::VideoMode(625, 625), "High Scores");
     Vector2i mousePos;
-    sf::Color base = sf::Color::Magenta;
+    sf::Color base = sf::Color::Cyan;
     sf::Color backGroundColor(25, 25, 25);
     Rectangle background(sf::Vector2f(620.f, 620.f), backGroundColor, sf::Vector2f(2.5, 2.5),
         base, 2.5);
