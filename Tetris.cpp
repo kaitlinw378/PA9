@@ -407,7 +407,7 @@ void Tetris::play()
 
     //testing gamepiece
     Piece piece;
-    
+    bool collide = false;
     //piece.createPiece();
 
     //Player Score
@@ -481,7 +481,7 @@ void Tetris::play()
 
         piece.draw(window);
 
-        piece.moveDown(window, bottom);
+        piece.moveDown(window, bottom, left, right, collide);
         
         //<<<<<< < HEAD
         //    //piece.drawPiece(window); //testing piece drawing
