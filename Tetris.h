@@ -25,6 +25,7 @@ public:
 	~Tetris();
 	bool runTetris();
 	bool display();
+	int getScore(int& score, int& currentLevel, int& numLinesCleared);
 
 private:
 	int runMenu();

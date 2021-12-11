@@ -16,8 +16,8 @@ public:
 	void testApplicationLoadingPercentage();
 	void testApplicationDisplayMenu();
 	void testTetrisDisplayMenu();
-	void testScoreFunction();
-	void testsomethin();
+	void testScoreDisplay();
+	void testCalculateScore();
 
 private:
 };

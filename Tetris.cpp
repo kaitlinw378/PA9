@@ -750,7 +750,13 @@ void Tetris::viewScores()
 
 }
 
-
+int Tetris::getScore(int& score, int& currentLevel, int& numLinesCleared)
+{
+    int result = 0;
+    addLineScore(score, currentLevel, numLinesCleared);
+    result = score;
+    return result;
+}
 
 void Tetris::addLineScore(int& score, int& currentLevel, int& numLinesCleared)
 {
@@ -776,3 +782,4 @@ void Tetris::addStaticScore(int& score, int& currentLevel)
 {
     score = score + 10 + (10 * currentLevel);
 }
+
