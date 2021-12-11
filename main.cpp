@@ -36,6 +36,8 @@ int main() {
 	//t.testScoreDisplay();
 	// Test 5
 	//t.testCalculateScore();
+	// Test 6
+	//t.testCheckPositions();
 
 
 	return 0;
