@@ -1,5 +1,4 @@
-#include "piece.h"
-
+#include "Piece.h"
 
 Piece::Piece() {
 	blocks[0].setSize(Vector2f(25, 25));
@@ -28,58 +27,65 @@ void Piece::draw(sf::RenderWindow& window) {
 void Piece::timeDelay(bool& t) {
 	if (t == true) {
 		int i = 0;
-		while (i <= 200000000) {
+		while (i <= 300000000) {
 			i++;
 		}
 		t = false;
 		resetTimeLoop(t);
 	}
-
 }
 
 void Piece::resetTimeLoop(bool& t) {
 	timeLoop = t;
 }
 
-
-
 void Piece::moveDown(sf::RenderWindow& window, Rectangle& rect) {
 	bool success = false;
+	/*Blocks temp;
+	temp.setPosition(boundsCord);
+	temp.setSize(Vector2f(25, 25));*/
 	//87.5
 	//587.5
-	//y_pos += 25;
-	//updateCoords(y_pos);
+
 	timeDelay(timeLoop);
 	if (!blocks[3].getGlobalBounds().intersects(rect.getGlobalBounds()) && timeLoop == false) {
 
-		pieceFall(rotateRight, window);
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-			rotatePieceRight(rotateRight);
-			//moveDown(window, rect);
+		pieceFall(window);
 
-			/*for (int i = 0; i < 4; i++) {
-				window.draw(blocks[i]);
-			}*/
-			//rotateRight = 1;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+			rotateRight += 1;
+			if (rotateRight > 4) {
+				rotateRight = 0;
+			}
+
+			rotatePieceRight(rotateRight);
+		}
+		window.setKeyRepeatEnabled(false);
+
+		/*rotateRight += 1;
+		if (rotateRight > 4) {
+			rotateRight = 0;
 		}
 
-		//for (int i = 0; i < 4; i++) {
-		//	//updateCoords(blocks[i]);
-		//	//blocks[i].move(0, 0.1);
-		//	window.draw(blocks[i]);
-		//}
+		rotatePieceRight(rotateRight);
+		rotateRight += 1;
+		rotatePieceRight(rotateRight);
+		rotateRight += 1;
+		rotatePieceRight(rotateRight);
+		rotateRight += 1;
+		rotatePieceRight(rotateRight);
+		rotateRight += 1;
+		rotatePieceRight(rotateRight);
+		rotateRight += 1;*/
 
-
-
+		draw(window);
 		success = true;
-
 	}
-	draw(window);
 	timeLoop = true;
 	//return success;
 }
 
-void Piece::pieceFall(int& r, sf::RenderWindow& window) {
+void Piece::pieceFall(sf::RenderWindow& window) {
 	int tempYcord = 0;
 	int tempXcord = 0;
 	for (int i = 0; i < 4; i++) {
@@ -90,7 +96,6 @@ void Piece::pieceFall(int& r, sf::RenderWindow& window) {
 	}
 }
 
-
 void Piece::updateCoords(Blocks& block) {
 	int tempYcord = getYpos(block);
 	tempYcord += 25;
@@ -98,40 +103,94 @@ void Piece::updateCoords(Blocks& block) {
 	block.setPosition(Vector2f(tempXcord, tempYcord));
 }
 
-Vector2f Piece::getLowestXCord() {
+Vector2f Piece::getLowestCord(int& r) {
 	Vector2f lowcord;
-	int lowestx = getXpos(blocks[0]);
-	int lowesty = getYpos(blocks[0]);
-	lowcord.x = lowestx;
-	lowcord.y = lowesty;
-	int tempx = 0;
-	int tempy = 0;
-	for (int i = 0; i < 4; i++) {
-		tempy = getYpos(blocks[i]);
-		if (tempy < lowesty) {
-			lowcord.y = tempy;
+	if (r == 1 || r == 3) {
+		int lowestx = getXpos(blocks[3]);
+		int lowesty = getYpos(blocks[3]);
+		int tempx = 0;
+		int tempy = 0;
+		for (int i = 0; i < 4; i++) {
+			tempy = getYpos(blocks[i]);
 			tempx = getXpos(blocks[i]);
-			lowcord.x = tempx;
-			//lowest = temp;
+			if (tempy < lowesty) {
+				lowcord.y = tempy;
+				lowcord.x = tempx;
+			}
 		}
+	}
+	if (r == 2) {
+		lowcord.x = getXpos(blocks[1]);
+		lowcord.y = getYpos(blocks[0]);
+	}
+	if (r == 4) {
+		int greatestx = getXpos(blocks[0]);
+		int greatesty = getYpos(blocks[0]);
+		int tempx = 0;
+		int tempy = 0;
+		for (int i = 0; i < 4; i++) {
+			tempy = getYpos(blocks[i]);
+			tempx = getXpos(blocks[i]);
+			if (tempx > greatestx) {
+
+				greatesty = tempy;
+				greatestx = tempx;
+			}
+		}
+		lowcord.x = greatestx;
+		lowcord.y = greatesty;
+
 	}
 	return lowcord;
 }
 
 void Piece::rotatePieceRight(int& r) {
-	Vector2f lowestCords = getLowestXCord();
-
-	int tempXCord = lowestCords.x;
-	int tempYcord = lowestCords.y;
-	setXpos(tempXCord);
-	setYpos(tempYcord);
-
-
-	blocks[3].setPosition(Vector2f((tempXCord), tempYcord));
-	blocks[2].setPosition(Vector2f((tempXCord + 25), tempYcord));
-	blocks[1].setPosition(Vector2f((tempXCord + 50), tempYcord));
-	blocks[0].setPosition(Vector2f((tempXCord + 75), tempYcord));
-
+	Vector2f lowestCords = getLowestCord(r);
+	if (r == 1) {
+		int tempXCord = lowestCords.x;
+		int tempYcord = lowestCords.y;
+		for (int i = 0; i < 4; i++) {
+			blocks[i].setPosition(Vector2f(tempXCord, tempYcord));
+			tempXCord += 25;
+		}
+	}
+	else if (r == 2) {
+		int tempXcord = lowestCords.x;
+		int tempYcord = 0;
+		int x = 0;
+		int y = 0;
+		for (int i = 0; i < 4; i++) {
+			y = getYpos(blocks[i]);
+			blocks[i].setPosition(Vector2f(tempXcord, (y + tempYcord)));
+			tempYcord += 25;
+		}
+	}
+	else if (r == 3) {
+		int tempXCord = lowestCords.x;
+		int tempYcord = lowestCords.y;
+		for (int i = 0; i < 4; i++) {
+			blocks[i].setPosition(Vector2f(tempXCord, tempYcord));
+			tempXCord -= 25;
+		}
+	}
+	else if (r == 4) {
+		int tempXcord = lowestCords.x;
+		int tempYcord = lowestCords.y;
+		int x = 0;
+		int y = 0;
+		for (int i = 0; i < 4; i++) {
+			//y = getYpos(blocks[i]);
+			blocks[i].setPosition(Vector2f(tempXcord, (tempYcord)));
+			tempYcord -= 25;
+		}
+		//r = 0;
+		//r = 1;
+	}
+	else {
+		if (r > 4) {
+			r = 0;
+		}
+	}
 }
 
 int Piece::getXpos(Blocks& block) {
