@@ -134,7 +134,7 @@ void Application::displayStartUpScreen()
         cout << i << "%";
         cout << endl << endl << endl << endl << endl << endl << endl << endl <<
             endl << endl << endl << endl << endl << endl << endl << endl;
-        Sleep(10);
+        Sleep(1);
         system("cls");
     }
     system("cls");

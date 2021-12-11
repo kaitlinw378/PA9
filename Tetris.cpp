@@ -13,11 +13,10 @@ Tetris::~Tetris()
 
 void Tetris::runTetris()
 {
-    sf::RenderWindow window(sf::VideoMode(625, 625), "Tetris");
-	runMenu(window);
+	runMenu();
 }
 
-void Tetris::runMenu(sf::RenderWindow& window)
+void Tetris::runMenu()
 {
     Vector2i mousePos;
 
@@ -27,6 +26,7 @@ void Tetris::runMenu(sf::RenderWindow& window)
     int option = 0;
     do {
         option = 0;
+        sf::RenderWindow window(sf::VideoMode(625, 625), "Tetris");
         displayMenu(window);
         while (window.isOpen())
         {
@@ -52,12 +52,12 @@ void Tetris::runMenu(sf::RenderWindow& window)
             }
             if ((mousePos.x > 90 && mousePos.x < 560) && (mousePos.y > 375 && mousePos.y < 425))
             {
-                option = 2;
+                option = 3;
                 window.close();
             }
             if ((mousePos.x > 90 && mousePos.x < 560) && (mousePos.y > 475 && mousePos.y < 525))
             {
-                option = 3;
+                option = 4;
                 window.close();
             }
         }
@@ -79,8 +79,8 @@ void Tetris::runMenu(sf::RenderWindow& window)
         default: //Invalid Input
             break;
         }
-        system("cls");
-    } while (option != 3);
+
+    } while (option != 4);
 }
 
 void Tetris::displayMenu(sf::RenderWindow& window)
@@ -483,6 +483,118 @@ void Tetris::displayGameRules()
 
 void Tetris::displayScores()
 {
+    fstream infile;
+    infile.open("HighScores.txt", std::ios::in);
+
+    sf::RenderWindow window(sf::VideoMode(625, 625), "High Scores");
+    Vector2i mousePos;
+    sf::Color base = sf::Color::Cyan;
+    sf::Color backGroundColor(25, 25, 25);
+    Rectangle background(sf::Vector2f(620.f, 620.f), backGroundColor, sf::Vector2f(2.5, 2.5),
+        base, 2.5);
+
+    sf::Font font;
+    font.loadFromFile("Teko.ttf");
+
+    sf::Text textTitle;
+    sf::Text tScore1;
+    sf::Text tScore2;
+    sf::Text tScore3;
+
+    std::string sScore1 = "1.  ";
+    std::string sScore2 = "2.  ";
+    std::string sScore3 = "3.  ";
+
+    std::string sCat1;
+    std::string sCat2;
+    std::string sCat3;
+
+    std::stringstream ss1;
+    std::stringstream ss2;
+    std::stringstream ss3;
+
+    int score1, score2, score3;
+
+    //Title Text
+    textTitle.setFont(font);
+    textTitle.setString("High Scores");
+    textTitle.setCharacterSize(100);
+    textTitle.setFillColor(base);
+
+    sf::FloatRect textRect = textTitle.getLocalBounds();
+    textTitle.setOrigin(textRect.width / 2, textRect.height / 2);
+    textTitle.setPosition(sf::Vector2f(window.getSize().x / 2.f, window.getSize().y / 11.f));
+    
+    infile >> score1;
+    infile >> score2;
+    infile >> score3;
+
+    ss1 << score1;
+    ss1 >> sCat1;
+    ss2 << score2;
+    ss2 >> sCat2;
+    ss3 << score3;
+    ss3 >> sCat3;
+
+    sScore1 = sScore1 + sCat1;
+    sScore2 = sScore2 + sCat2;
+    sScore3 = sScore3 + sCat3;
+
+    //Score1 Text
+    tScore1.setFont(font);
+    tScore1.setString(sScore1);
+    tScore1.setCharacterSize(50);
+    tScore1.setFillColor(base);
+
+    textRect = tScore1.getLocalBounds();
+    tScore1.setOrigin(100, textRect.height / 2);
+    tScore1.setPosition(sf::Vector2f(window.getSize().x / 2.f, 200));
+
+    //Score2 Text
+    tScore2.setFont(font);
+    tScore2.setString(sScore2);
+    tScore2.setCharacterSize(50);
+    tScore2.setFillColor(base);
+
+    textRect = tScore2.getLocalBounds();
+    tScore2.setOrigin(100, textRect.height / 2);
+    tScore2.setPosition(sf::Vector2f(window.getSize().x / 2.f, 300));
+
+    //Score3 Text
+    tScore3.setFont(font);
+    tScore3.setString(sScore3);
+    tScore3.setCharacterSize(50);
+    tScore3.setFillColor(base);
+
+    textRect = tScore3.getLocalBounds();
+    tScore3.setOrigin(100, textRect.height / 2);
+    tScore3.setPosition(sf::Vector2f(window.getSize().x / 2.f, 400));
+
+
+    window.draw(background);
+    window.draw(textTitle);
+    window.draw(tScore1);
+    window.draw(tScore2);
+    window.draw(tScore3);
+    window.display();
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+        while (!sf::Mouse::isButtonPressed(sf::Mouse::Left));
+
+        mousePos = sf::Mouse::getPosition(window);
+
+        if ((mousePos.x > 90 && mousePos.x < 560) && (mousePos.y > 175 && mousePos.y < 235))
+        {
+            window.close();
+        }
+    }
     //View highscores
 
     //open highscores file
