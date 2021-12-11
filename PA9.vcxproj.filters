@@ -27,28 +27,10 @@
     <ClCompile Include="ProgressBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GamePiece.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ipiece.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="opiece.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="lpiece.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="jpiece.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="spiece.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="zpiece.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tpiece.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Blocks.cpp">
@@ -82,34 +64,13 @@
     <ClInclude Include="ProgressBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GamePiece.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Tab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ipiece.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="opiece.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="lpiece.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="jpiece.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="spiece.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="zpiece.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tpiece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Rectangle.h">

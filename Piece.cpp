@@ -252,3 +252,11 @@ void Piece::setXpos(int& xpos) {
 void Piece::setYpos(int& ypos) {
 	y_pos = ypos;
 }
+
+void Piece::setBlocksPosition(int& bl, Vector2f& vec) {
+	blocks[bl].setPosition(vec);
+}
+
+Vector2f Piece::getBlocksPosition(int& bl) {
+	return blocks[bl].getPosition();
+}

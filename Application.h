@@ -3,7 +3,6 @@
 #include "Tetris.h"
 #include <Windows.h>
 #include "Tab.h"
-#include "GamePiece.h"
 
 
 class Application

@@ -75,3 +75,20 @@ void test::testCalculateScore()
 	}
 	system("pause");
 }
+
+void test::testCheckPositions() {
+	int num = 2;
+	Piece piece(num);
+
+	Vector2f vec(250, 25), res;
+	piece.setBlocksPosition(num, vec);
+
+	res = piece.getBlocksPosition(num);
+	if (res.x == vec.x && res.y == vec.y) {
+		cout << "test pass" << endl;
+	}
+	else {
+		cout << "fail pass" << endl;
+	}
+
+}
