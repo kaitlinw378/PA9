@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "piece.h"
+#include "Piece.h"
 #include <fstream>
 #include <string.h>
 #include <sstream>
