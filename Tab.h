@@ -1,3 +1,20 @@
+/***************************************************************************
+* Programmer: Grant Erickson, Spenceer, Caleb Peterson, Kaitlin White
+* Class: CptS 122;
+* Programming Assignment: Programming assignment 9
+* Date:  12/1/2021
+*
+*       Program Description: This program runs a retro game application.
+*							 The retro game application stores multiple
+*							 different games. As of now tetris is the
+*						     only game available.
+*
+*		File Description: This file stores the the class definition for
+*						  Tab. This class inherits from RectangleShape.
+*						  We used this class to create the graphics for the
+*						  menus.
+*
+***************************************************************************/
 #pragma once
 
 #include <iostream>
