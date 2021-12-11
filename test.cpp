@@ -30,8 +30,11 @@ void test::testTetrisDisplayMenu()
 
 void test::testScoreFunction()
 {
-	
-	
+	Tetris run;
+	if (run.display() == true)
+	{
+		cout << "The result matched expected result" << endl;
+	}
 }
 
 void test::testsomethin()

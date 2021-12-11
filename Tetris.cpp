@@ -596,8 +596,19 @@ void Tetris::displayGameRules()
     }
 }
 
-void Tetris::displayScores()
+bool Tetris::display()
 {
+    bool result = false;
+    if (displayScores() == 1)
+    {
+        result = true;
+    }
+    return result;
+}
+
+int Tetris::displayScores()
+{
+    int result = 0;
     fstream infile;
     infile.open("HighScores.txt", std::ios::in);
 
@@ -727,12 +738,16 @@ void Tetris::displayScores()
     //open highscores file
     //read in scores
     //display scores
+    result = 1;
+    return result;
 }
 
 void Tetris::viewScores()
 {
 
 }
+
+
 
 void Tetris::addLineScore(int& score, int& currentLevel, int& numLinesCleared)
 {

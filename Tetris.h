@@ -24,6 +24,7 @@ public:
 	Tetris();
 	~Tetris();
 	bool runTetris();
+	bool display();
 
 private:
 	int runMenu();
@@ -32,7 +33,7 @@ private:
 	void displayClosingScreen();
 	void play();
 	void displayGameRules();
-	void displayScores();
+	int displayScores();
 	void viewScores();
 	void addLineScore(int& score, int& currentLevel, int& numLinesCleared);
 	void addStaticScore(int& score, int& currentLevel);
