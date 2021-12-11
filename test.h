@@ -18,6 +18,7 @@ public:
 	void testTetrisDisplayMenu();
 	void testScoreDisplay();
 	void testCalculateScore();
+	void testCheckPositions();
 
 private:
 };

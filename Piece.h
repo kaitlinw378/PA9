@@ -39,4 +39,6 @@ public:
 	void moveLeft();
 	sf::FloatRect getBounds();
 	bool colisionCheck(vector<Piece>& vec);
+	void setBlocksPosition(int& bl, Vector2f& vec);
+	Vector2f getBlocksPosition(int& bl);
 };
