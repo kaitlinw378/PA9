@@ -38,4 +38,5 @@ Tetris was much more difficult to implement than we originally expected and ran 
 our progress or restarted it altogether. Creating many objects and keeping track of all of their collisions and status 
 was a challenge we were not able to complete in the end. After the last week of getting help and trying new things, we 
 have made much more progress than we were thinking we would end with. We feel proud that we were able to figure out 
-the initial piece issues even though we ran into several new ones in the end. 
+the initial piece issues even though we ran into several new ones in the end because it was such a difficult challenge
+for our understandings of the issues at the time.
