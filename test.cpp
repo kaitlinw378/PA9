@@ -31,7 +31,6 @@ void test::testTetrisDisplayMenu()
 void test::testScoreFunction()
 {
 	
-	
 }
 
 void test::testsomethin()
