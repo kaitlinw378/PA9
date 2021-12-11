@@ -27,9 +27,6 @@
     <ClCompile Include="ProgressBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lpiece.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="spiece.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
