@@ -41,9 +41,6 @@ void test::testTetrisDisplayMenu()
 
 void test::testScoreDisplay()
 {
-<<<<<<< HEAD
-	
-=======
 	Tetris run;
 	if (run.display() == true)
 	{
@@ -53,7 +50,6 @@ void test::testScoreDisplay()
 	{
 		cout << "!!!!!!!Test Failed!!!!!!" << endl;
 	}
->>>>>>> c29dc91977ddf2aec10d0e496c9e205a39478d17
 }
 
 void test::testCalculateScore()

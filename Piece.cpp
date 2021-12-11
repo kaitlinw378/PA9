@@ -147,11 +147,11 @@ Vector2f Piece::getLowestCord(int& r) {
 void Piece::rotatePieceRight(int& r) {
 	Vector2f lowestCords = getLowestCord(r);
 	if (r == 1) {
-		/*int tempXCord = lowestCords.x;
+		int tempXCord = lowestCords.x;
 		int tempYcord = lowestCords.y;
 		for (int i = 0; i < 4; i++) {
 			blocks[i].setPosition(Vector2f(tempXCord, tempYcord));
-			tempXCord += 25;*/
+			tempXCord += 25;
 		}
 	}
 	else if (r == 2) {
