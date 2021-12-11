@@ -34,7 +34,7 @@ private:
 	void play();
 	void displayGameRules();
 	int displayScores();
-	void viewScores();
+	void displayHishScore(sf::RenderWindow& window);
 	void addLineScore(int& score, int& currentLevel, int& numLinesCleared);
 	void addStaticScore(int& score, int& currentLevel);
 

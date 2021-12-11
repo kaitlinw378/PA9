@@ -170,6 +170,7 @@
     <ClCompile Include="zpiece.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="HighScores.txt" />
     <Text Include="text.txt" />
   </ItemGroup>
   <ItemGroup>

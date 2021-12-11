@@ -461,6 +461,10 @@ void Tetris::play()
         window.draw(line29, 2, sf::Lines);
         window.draw(line30, 2, sf::Lines);
 
+
+        
+        displayHishScore(window);  //Displays High Scores
+
         //window.draw(bar);
 
         window.draw(text1);
@@ -733,17 +737,39 @@ int Tetris::displayScores()
             window.close();
         }
     }
-    //View highscores
-
-    //open highscores file
-    //read in scores
-    //display scores
+    infile.close();
     result = 1;
     return result;
 }
 
-void Tetris::viewScores()
+void Tetris::displayHishScore(sf::RenderWindow& window)
 {
+    fstream infile;
+    infile.open("HighScores.txt", std::ios::in);
+    int score;
+    std::stringstream ss;
+    std::string output;
+    
+    sf::Font font;
+    font.loadFromFile("Teko.ttf");
+
+    sf::Text tOutput;
+    
+    
+    infile >> score;
+    ss << score;
+    ss >> output;
+
+    tOutput.setFont(font);
+    tOutput.setString(output);
+    tOutput.setCharacterSize(40);
+    tOutput.setFillColor(sf::Color::White);
+
+    sf::FloatRect textRect = tOutput.getLocalBounds();
+    tOutput.setOrigin(textRect.width / 2, textRect.height / 2);
+    tOutput.setPosition(sf::Vector2f(487.5, 520.5));
+
+    window.draw(tOutput);
 
 }
 
