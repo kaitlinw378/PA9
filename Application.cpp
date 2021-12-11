@@ -65,7 +65,7 @@ int Application::runMenu()
             system("pause");
             break;
  
-        default: //Invalid Input
+        case 3: //Exit
             break;
         }
     } while (option != 3);

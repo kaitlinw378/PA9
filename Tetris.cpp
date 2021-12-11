@@ -83,10 +83,7 @@ int Tetris::runMenu()
             break;
         case 4: //Exit Tetris
             break;
-        default: //Invalid Input
-            break;
         }
-
     } while (option != 4);
     return result;
 }
