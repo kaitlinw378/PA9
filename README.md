@@ -38,8 +38,8 @@ Final Notes:
 but they were accidentally permanently deleted instead of just temporarily removed from the project.
 
 Here is an example of our first attempt at implementing a piece:  
+```
 
-``` 
 	vector<Vector2i> Spiece::createSPiece() {
 		pieceVect.push_back(sf::Vector2i{ 2,0 });
 		pieceVect.push_back(sf::Vector2i{ 3,0 });
