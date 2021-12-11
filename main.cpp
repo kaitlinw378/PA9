@@ -12,11 +12,12 @@ using std::endl;
 
 int main() {
 
-	/*Application obj;
-	obj.runApplication();*/
+	Application obj;
+	obj.runApplication();
 
-	test t;
-	t.testApplicationLoadingPercentage();
+	//test t;
+	//t.testApplicationLoadingPercentage();
+	//t.testTetrisDisplayMenu();
 
 	return 0;
 }
