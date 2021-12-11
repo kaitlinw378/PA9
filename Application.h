@@ -10,6 +10,7 @@ class Application
 {
 public:
 	Application();
+	Application(int test) {}
 	~Application();
 	bool runApplication();
 	bool checkDisplayStartUp();

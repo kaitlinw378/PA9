@@ -2,7 +2,8 @@
 
 void test::testApplicationLoadingPercentage()
 {
-	Application run;
+	int test = 0;
+	Application run(test);
 	bool startup = run.checkDisplayStartUp();
 	if (startup == true) 
 	{
@@ -17,7 +18,8 @@ void test::testApplicationLoadingPercentage()
 
 void test::testApplicationDisplayMenu()
 {
-	Application run;
+	int test = 0;
+	Application run(test);
 	if (run.runApplication() == true)
 	{
 		cout << "The result matched expected result" << endl;
