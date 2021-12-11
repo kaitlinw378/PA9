@@ -16,23 +16,27 @@ class Piece {
 private:
 	Blocks blocks[4];
 	int x_pos = 200;
-	int y_pos = 0;
-	Vector2f boundsCord;
+	int y_pos = -87;
 	bool timeLoop = false;
 	int rotateRight = 4;
 public:
 	Piece();
-	Vector2f getLowestCord(int& r);
-	//Vector2f getBoundCord(Vector2f& v);
+	Piece(int& num);
 	void timeDelay(bool& t);
 	void resetTimeLoop(bool& t);
 	int getXpos(Blocks& block);
 	int getYpos(Blocks& block);
 	void setXpos(int& xpos);
 	void setYpos(int& ypos);
-	void updateCoords(Blocks& block);
 	void draw(sf::RenderWindow& window);
-	void moveDown(sf::RenderWindow& window, Rectangle& rect);
+	bool moveDown(sf::RenderWindow& window, Rectangle& rect, Rectangle& left, Rectangle& right, bool& collision);
 	void pieceFall(sf::RenderWindow& window);
-	void rotatePieceRight(int& r);
+	void rotatePieceRight();
+	void rotatePieceDown();
+	void rotatePieceLeft();
+	void rotatePieceUp();
+	void moveRight();
+	void moveLeft();
+	sf::FloatRect getBounds();
+	bool colisionCheck(vector<Piece>& vec);
 };
