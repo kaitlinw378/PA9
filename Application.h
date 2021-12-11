@@ -11,12 +11,14 @@ class Application
 public:
 	Application();
 	~Application();
-	void runApplication();
+	bool runApplication();
+	bool checkDisplayStartUp();
+	
 
 private:
-	void runMenu();
-	void displayMenu(sf::RenderWindow& window);
-	void displayStartUpScreen();
+	int runMenu();
+	int displayMenu(sf::RenderWindow& window);
+	int displayStartUpScreen();
 	void displayClosingScreen();
 
 	//Tetris mGame1;

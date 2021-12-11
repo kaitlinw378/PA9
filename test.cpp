@@ -1,36 +1,41 @@
 #include "test.h"
 
-bool test::testApplicationLoadingPercentage()
+void test::testApplicationLoadingPercentage()
 {
-	bool result;
-
-	return result;
+	Application run;
+	if (run.checkDisplayStartUp() == true) 
+	{
+		cout << "The result matched expected result" << endl;
+	}
 }
 
-bool test::testApplicationDisplayMenu()
+void test::testApplicationDisplayMenu()
 {
-	bool result;
-
-	return result;
+	Application run;
+	if (run.runApplication() == true)
+	{
+		cout << "The result matched expected result" << endl;
+	}
+	
 }
 
-bool test::testTetrisDisplayMenu()
+void test::testTetrisDisplayMenu()
 {
-	bool result;
-
-	return result;
+	Tetris run;
+	if (run.runTetris() == true)
+	{
+		cout << "The result matched expected result" << endl;
+	}
 }
 
-bool test::testScoreFunction()
+void test::testScoreFunction()
 {
-	bool result;
-
-	return result;
+	
+	
 }
 
-bool test::testsomethin()
+void test::testsomethin()
 {
-	bool result;
 
-	return result;
+	
 }
