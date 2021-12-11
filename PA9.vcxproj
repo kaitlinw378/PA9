@@ -155,7 +155,6 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Blocks.cpp" />
-    <ClCompile Include="lpiece.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Piece.cpp" />
     <ClCompile Include="ProgressBar.cpp" />
@@ -177,7 +176,6 @@
     <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="spiece.h" />
     <ClInclude Include="Tab.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="Tetris.h" />

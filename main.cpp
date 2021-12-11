@@ -12,8 +12,8 @@ using std::endl;
 
 int main() {
 
-	/*Application obj;
-	obj.runApplication();*/
+	Application obj;
+	obj.runApplication();
 
 
 	//For Testing Purposes: Please run each test case separately and comment the others out
@@ -29,6 +29,8 @@ int main() {
 	//t.testScoreDisplay();
 	// Test 5
 	//t.testCalculateScore();
+	// Test 6
+	//t.testCheckPositions();
 
 
 	return 0;
