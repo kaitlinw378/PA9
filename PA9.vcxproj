@@ -197,6 +197,10 @@
     <Font Include="Anton.ttf" />
     <Font Include="Teko.ttf" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Pictures\Saved Pictures\TetrisControls.png" />
+    <Image Include="..\..\..\Pictures\Saved Pictures\TetrisRules.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

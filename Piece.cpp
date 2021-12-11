@@ -25,142 +25,129 @@ void Piece::draw(sf::RenderWindow& window) {
 	}
 }
 
-void Piece::updateCoords(int y) {
-	for (int i = 0; i < 4; i++) {
-		blocks[i].setPosition(Vector2f(x_pos, y));
+void Piece::timeDelay(bool& t) {
+	if (t == true) {
+		int i = 0;
+		while (i <= 200000000) {
+			i++;
+		}
+		t = false;
+		resetTimeLoop(t);
 	}
+
 }
 
+void Piece::resetTimeLoop(bool& t) {
+	timeLoop = t;
+}
+
+
+
 void Piece::moveDown(sf::RenderWindow& window, Rectangle& rect) {
+	bool success = false;
 	//87.5
 	//587.5
 	//y_pos += 25;
 	//updateCoords(y_pos);
-	if (!blocks[3].getGlobalBounds().intersects(rect.getGlobalBounds())) {
+	timeDelay(timeLoop);
+	if (!blocks[3].getGlobalBounds().intersects(rect.getGlobalBounds()) && timeLoop == false) {
 
-		for (int i = 0; i < 4; i++) {
-			blocks[i].move(0, 0.1);
-			window.draw(blocks[i]);
+		pieceFall(rotateRight, window);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+			rotatePieceRight(rotateRight);
+			//moveDown(window, rect);
 
+			/*for (int i = 0; i < 4; i++) {
+				window.draw(blocks[i]);
+			}*/
+			//rotateRight = 1;
 		}
+
+		//for (int i = 0; i < 4; i++) {
+		//	//updateCoords(blocks[i]);
+		//	//blocks[i].move(0, 0.1);
+		//	window.draw(blocks[i]);
+		//}
+
+
+
+		success = true;
+
+	}
+	draw(window);
+	timeLoop = true;
+	//return success;
+}
+
+void Piece::pieceFall(int& r, sf::RenderWindow& window) {
+	int tempYcord = 0;
+	int tempXcord = 0;
+	for (int i = 0; i < 4; i++) {
+		tempYcord = getYpos(blocks[i]);
+		tempYcord += 25;
+		tempXcord = getXpos(blocks[i]);
+		blocks[i].setPosition(Vector2f(tempXcord, tempYcord));
 	}
 }
 
-//
-//Piece::Piece(int pT){
-//	this->pieceType = 1;
-//	this->pieceV = getBlockInfo(x, y);
-//}
-//
-//void initRec() {
-//	sf::RectangleShape s1(sf::Vector2f(25.f, 25.f));
-//	sf::RectangleShape s2(sf::Vector2f(25.f, 25.f));
-//	sf::RectangleShape s3(sf::Vector2f(25.f, 25.f));
-//	sf::RectangleShape s4(sf::Vector2f(25.f, 25.f));
-//	
-//
-//
-//}
-//
-//
-//vector<Vector2i> Piece::updateYCords() {
-//	vector<Vector2i> tempVec;
-//	//y_pos += 1;
-//	tempVec.push_back(Vector2i(x_pos, y_pos));
-//	tempVec.push_back(Vector2i(x_pos, y_pos));
-//	tempVec.push_back(Vector2i(x_pos, y_pos));
-//	tempVec.push_back(Vector2i(x_pos, y_pos));
-//	this->pieceV = tempVec;
-//	return tempVec;
-//
-//
-//	/*for (Vector2i v : vec) {
-//		v.y = y_pos;
-//	}*/
-//}
-//
-//vector<Vector2i> Piece::getBlockInfo(int x_pos, int y_pos) {
-//	vector<Vector2i> vec;
-//
-//	vec.push_back(Vector2i(x_pos, y_pos));
-//	vec.push_back(Vector2i(x_pos, (y_pos + 1)));
-//	vec.push_back(Vector2i(x_pos, (y_pos + 2)));
-//	vec.push_back(Vector2i(x_pos, (y_pos + 3)));
-//
-//	return vec;
-//}
-//
-//void Piece::pieceControl() {
-//	sf::RectangleShape cell(sf::Vector2f(25.f, 25.f));
-//	cell.setFillColor(sf::Color::Red);	
-//	y += 1;
-//	this->pieceV = updateYCords();
-//	for (Vector2i& mino : pieceV) {
-//		cell.setPosition((25* mino.x), (25* mino.y));
-//		//cell.move(0, 25);
-//	}
-//}
-//
-//
-//void Piece::drawFirst(sf::RenderWindow& window) {
-//	sf::RectangleShape cell(sf::Vector2f(25.f, 25.f));
-//	cell.setFillColor(sf::Color::Red);
-//	for (Vector2i& mino : pieceV)
-//	{
-//		cell.setPosition((25 * mino.x), (25 * mino.y));
-//
-//		window.draw(cell);
-//	}
-//}
-//
-//bool Piece::move_down(sf::RenderWindow& window) {
-//	
-//	//sf::RectangleShape cube(sf::Vector2f(25.f, 25.f));
-//	//cube.setFillColor(sf::Color::Red);
-//	//blocks.updateYCords(pieceV);
-//	//cube.setPosition((25), (0));
-//	//sh.move(0, 25);
-//	//window.draw(sh);
-//	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-//	//	for (Vector2i& mino : pieceV)
-//	//	{
-//	//		//cube.setPosition((25 * mino.x), (25 * mino.y) + 25);
-//	//		sh.move(0, 25);
-//	//	}
-//	//	//cube.move(0, 25);
-//	//	window.draw(sh);
-//	//}
-//	/*for (Vector2i& mino : pieceV)
-//	{
-//		cube.setPosition((25 * mino.x), (25 * mino.y));
-//		
-//		window.draw(cube);
-//	}*/
-//	
-//
-//	//blocks.updateYCords(pieceV);
-//	/*for (Vector2i bl : pieceV) {
-//		bl.y++;
-//	}*/
-//	return 1;
-//}
-//
-//int Piece::get_shape() {
-//	return this->pieceType;
-//}
-//
-////void Piece::update_matrix(std::vector<std::vector<int>>& i_matrix) {
-////	for (Vector2i& bl : pieceV)
-////	{
-////		if (0 > bl.y)
-////		{
-////			continue;
-////		}
-////
-////		i_matrix[bl.x][bl.y] = 1 + pieceType;
-////	}
-////}
-//
-//vector<Vector2i> Piece::get_minos() {
-//	return this->pieceV;
-//}
+
+void Piece::updateCoords(Blocks& block) {
+	int tempYcord = getYpos(block);
+	tempYcord += 25;
+	int tempXcord = getXpos(block);
+	block.setPosition(Vector2f(tempXcord, tempYcord));
+}
+
+Vector2f Piece::getLowestXCord() {
+	Vector2f lowcord;
+	int lowestx = getXpos(blocks[0]);
+	int lowesty = getYpos(blocks[0]);
+	lowcord.x = lowestx;
+	lowcord.y = lowesty;
+	int tempx = 0;
+	int tempy = 0;
+	for (int i = 0; i < 4; i++) {
+		tempy = getYpos(blocks[i]);
+		if (tempy < lowesty) {
+			lowcord.y = tempy;
+			tempx = getXpos(blocks[i]);
+			lowcord.x = tempx;
+			//lowest = temp;
+		}
+	}
+	return lowcord;
+}
+
+void Piece::rotatePieceRight(int& r) {
+	Vector2f lowestCords = getLowestXCord();
+
+	int tempXCord = lowestCords.x;
+	int tempYcord = lowestCords.y;
+	setXpos(tempXCord);
+	setYpos(tempYcord);
+
+
+	blocks[3].setPosition(Vector2f((tempXCord), tempYcord));
+	blocks[2].setPosition(Vector2f((tempXCord + 25), tempYcord));
+	blocks[1].setPosition(Vector2f((tempXCord + 50), tempYcord));
+	blocks[0].setPosition(Vector2f((tempXCord + 75), tempYcord));
+
+}
+
+int Piece::getXpos(Blocks& block) {
+	int xtemp = block.getPosition().x;
+	return xtemp;
+}
+
+int Piece::getYpos(Blocks& block) {
+	int ytemp = block.getPosition().y;
+	return ytemp;
+}
+
+void Piece::setXpos(int& xpos) {
+	x_pos = xpos;
+}
+
+void Piece::setYpos(int& ypos) {
+	y_pos = ypos;
+}
