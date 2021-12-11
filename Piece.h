@@ -25,9 +25,20 @@ private:
 	//int x = 1, y = 0;
 public:
 	Piece();
-	void updateCoords(int y);
+	Vector2f getLowestXCord();
+	bool timeLoop = false;
+	int rotateRight = 0;
+	void timeDelay(bool& t);
+	void resetTimeLoop(bool& t);
+	int getXpos(Blocks& block);
+	int getYpos(Blocks& block);
+	void setXpos(int& xpos);
+	void setYpos(int& ypos);
+	void updateCoords(Blocks& block);
 	void draw(sf::RenderWindow& window);
 	void moveDown(sf::RenderWindow& window, Rectangle& rect);
+	void pieceFall(int& r, sf::RenderWindow& window);
+	void rotatePieceRight(int& r);
 	//void drawFirst(sf::RenderWindow& window);
 	//Piece(int pT);
 	//
