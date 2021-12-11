@@ -14,7 +14,6 @@ Tetris::~Tetris()
 bool Tetris::runTetris()
 {
     bool result = false;
-	runMenu();
     if (runMenu() == 1)
     {
         result = true;

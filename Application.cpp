@@ -14,7 +14,6 @@ Application::~Application()
 bool Application::runApplication()
 {
     int result = false;
-    runMenu();
     if (runMenu() == 1) {
         result = true;
     }
