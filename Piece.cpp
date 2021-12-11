@@ -191,6 +191,7 @@ void Piece::rotatePieceRight(int& r) {
 			r = 0;
 		}
 	}
+
 }
 
 int Piece::getXpos(Blocks& block) {
