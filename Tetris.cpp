@@ -11,23 +11,31 @@ Tetris::~Tetris()
 	displayClosingScreen();
 }
 
-void Tetris::runTetris()
+bool Tetris::runTetris()
 {
+    bool result = false;
 	runMenu();
+    if (runMenu() == 1)
+    {
+        result = true;
+    }
+    return result;
 }
 
-void Tetris::runMenu()
+int Tetris::runMenu()
 {
+    int result = 0;
     Vector2i mousePos;
-
-
-
 
     int option = 0;
     do {
         option = 0;
         sf::RenderWindow window(sf::VideoMode(625, 625), "Tetris");
         displayMenu(window);
+        if (displayMenu(window) == 1)
+        {
+            result = 1;
+        }
         while (window.isOpen())
         {
             sf::Event event;
@@ -81,10 +89,12 @@ void Tetris::runMenu()
         }
 
     } while (option != 4);
+    return result;
 }
 
-void Tetris::displayMenu(sf::RenderWindow& window)
+int Tetris::displayMenu(sf::RenderWindow& window)
 {
+    int result = 0;
 
     sf::Color base = sf::Color::Cyan;
     sf::Color backGroundColor(25, 25, 25);
@@ -172,6 +182,8 @@ void Tetris::displayMenu(sf::RenderWindow& window)
     window.draw(textExit);
 
     window.display();
+    int result = 1;
+    return result;
 }
 
 void Tetris::displayStartUpScreen()
@@ -598,6 +610,11 @@ void Tetris::displayScores()
             window.close();
         }
     }
+    //View highscores
+
+    //open highscores file
+    //read in scores
+    //display scores
 }
 
 void Tetris::viewScores()
@@ -605,8 +622,9 @@ void Tetris::viewScores()
 
 }
 
-void Tetris::addLineScore(int &score, int& currentLevel, int& numLinesCleared)
+int Tetris::calculateScore(int& currentLevel, int& numLinesCleared)
 {
+    int score = 0;
     if (numLinesCleared == 1)
     {
         score = score + 40 + (40 * currentLevel);
@@ -623,9 +641,9 @@ void Tetris::addLineScore(int &score, int& currentLevel, int& numLinesCleared)
     {
         score = score + 1200 + (1200 * currentLevel);
     }
-}
-
-void Tetris::addStaticScore(int& score, int& currentLevel)
-{
-    score = score + 10 + (10 * currentLevel);
+    else
+    {
+        score;
+    }
+    return score;
 }

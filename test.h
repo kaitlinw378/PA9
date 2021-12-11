@@ -13,11 +13,11 @@ public:
 	test();
 	~test();
 
-	bool testApplicationLoadingPercentage(Application run);
-	bool testApplicationDisplayMenu();
-	bool testTetrisDisplayMenu();
-	bool testScoreFunction();
-	bool testsomethin();
+	void testApplicationLoadingPercentage();
+	void testApplicationDisplayMenu();
+	void testTetrisDisplayMenu();
+	void testScoreFunction();
+	void testsomethin();
 
 private:
 };

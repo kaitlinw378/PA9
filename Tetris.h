@@ -23,18 +23,17 @@ class Tetris
 public:
 	Tetris();
 	~Tetris();
-	void runTetris();
+	bool runTetris();
 
 private:
-	void runMenu();
-	void displayMenu(sf::RenderWindow& window);
+	int runMenu();
+	int displayMenu(sf::RenderWindow& window);
 	void displayStartUpScreen();
 	void displayClosingScreen();
 	void play();
 	void displayGameRules();
 	void displayScores();
 	void viewScores();
-	void addLineScore(int& score, int& currentLevel, int& numLinesCleared);
-	void addStaticScore(int& score, int& currentLevel);
+	int calculateScore(int& currentLevel, int& numLinesCleared);
 
 };
