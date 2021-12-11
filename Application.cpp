@@ -11,14 +11,20 @@ Application::~Application()
     displayClosingScreen();
 }
 
-void Application::runApplication()
+bool Application::runApplication()
 {
+    int result = false;
     runMenu();
+    if (runMenu() == 1) {
+        result = true;
+    }
+    return result;
 }
 
-void Application::runMenu()
+int Application::runMenu()
 {
     int option;
+    int result = 0;
     Tetris game1;
     sf::Vector2i mousePos;
     option = 0;
@@ -27,6 +33,10 @@ void Application::runMenu()
         option = 0;
         sf::RenderWindow window(sf::VideoMode(1000, 1000), "Retro Runner");
         displayMenu(window);
+        if (displayMenu(window) == 1)
+        {
+            result = 1;
+        }
         while (window.isOpen())
         {
             sf::Event event;
@@ -60,10 +70,12 @@ void Application::runMenu()
             break;
         }
     } while (option != 3);
+    return result;
 }
 
-void Application::displayMenu(sf::RenderWindow& window)
+int Application::displayMenu(sf::RenderWindow& window)
 {
+    int result = 0;
     sf::Color backGroundColor(50, 50, 50);
 
     Tab background(sf::Vector2f(995.f, 995.f), backGroundColor, sf::Vector2f(2.5, 2.5),
@@ -121,10 +133,13 @@ void Application::displayMenu(sf::RenderWindow& window)
 
     //Display
     window.display();
+    result = 1;
+    return result;
 }
 
-void Application::displayStartUpScreen()
+int Application::displayStartUpScreen()
 {
+    int result = 0;
     for (int i = 0; i < 100; i+=5)
     {
         cout << endl << endl << endl << endl << endl << endl << endl <<
@@ -134,11 +149,25 @@ void Application::displayStartUpScreen()
         cout << i << "%";
         cout << endl << endl << endl << endl << endl << endl << endl << endl <<
             endl << endl << endl << endl << endl << endl << endl << endl;
-        Sleep(10);
+        Sleep(1);
         system("cls");
+        if (i == 95)
+        {
+            result = 1;
+        }
     }
     system("cls");
+    return result;
+}
 
+bool Application::checkDisplayStartUp() 
+{
+    bool result = false;
+    if (displayStartUpScreen() == 1)
+    {
+        result = true;
+    }
+    return result;
 }
 
 void Application::displayClosingScreen()

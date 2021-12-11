@@ -2,13 +2,17 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
-//#include <Mouse.hpp>
 //#include "GamePiece.h"
 #include "piece.h"
+#include <fstream>
+#include <string.h>
+#include <sstream>
 
 using sf::Vector2i;
 using sf::Window;
 using sf::Mouse;
+
+using std::fstream;
 
 using std::cout;
 using std::cin;
@@ -19,17 +23,18 @@ class Tetris
 public:
 	Tetris();
 	~Tetris();
-	void runTetris();
+	bool runTetris();
 
 private:
-	void runMenu(sf::RenderWindow& window);
-	void displayMenu(sf::RenderWindow& window);
+	int runMenu();
+	int displayMenu(sf::RenderWindow& window);
 	void displayStartUpScreen();
 	void displayClosingScreen();
 	void play();
 	void displayGameRules();
 	void displayScores();
 	void viewScores();
-	int calculateScore(int& currentLevel, int& numLinesCleared);
+	void addLineScore(int& score, int& currentLevel, int& numLinesCleared);
+	void addStaticScore(int& score, int& currentLevel);
 
 };
