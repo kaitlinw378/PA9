@@ -173,6 +173,7 @@
     <ClInclude Include="Piece.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Tab.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="Tetris.h" />
   </ItemGroup>
